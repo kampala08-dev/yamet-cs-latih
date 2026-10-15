@@ -26,7 +26,7 @@ type Tahap =
   | { jenis: 'menulis'; baris: BarisPengetahuan }
   | { jenis: 'selesai'; id: string };
 
-const PESAN_SELESAI = (id: string) => `Diterapkan ke ${id}, bot memuat ulang maksimal 1 menit.`;
+const PESAN_SELESAI = (id: string) => `Diterapkan ke ${id} sebagai jawaban persis; bot memuat ulang maksimal 1 menit.`;
 
 export function TerapkanPengetahuan({ koreksi, pengetahuanDipakai, pesanOrtu, simpanLog }: TerapkanProps) {
   const { sesi } = useSesi();
@@ -58,7 +58,7 @@ export function TerapkanPengetahuan({ koreksi, pengetahuanDipakai, pesanOrtu, si
     setGalat('');
     try {
       // Topik dan variasi lama ikut dikirim supaya n8n tidak mengosongkannya; hanya jawaban yang berubah.
-      const hasil = await api.aksi<{ id?: string }>('pengetahuan_tulis', { id: baris.id, topik: baris.topik, pertanyaan_variasi: baris.pertanyaan_variasi, jawaban: teks });
+      const hasil = await api.aksi<{ id?: string }>('pengetahuan_tulis', { id: baris.id, topik: baris.topik, pertanyaan_variasi: baris.pertanyaan_variasi, jawaban: teks, verbatim: 'ya' });
       setTahap({ jenis: 'selesai', id: hasil?.id || baris.id });
     } catch (e) {
       setTahap({ jenis: 'konfirmasi', baris });
@@ -108,6 +108,7 @@ export function TerapkanPengetahuan({ koreksi, pengetahuanDipakai, pesanOrtu, si
             kolom={KOLOM_PENGETAHUAN}
             awal={{ topik: 'umum', id: '', pertanyaan_variasi: pesanOrtu, jawaban: teks }}
             label="Simpan baris baru"
+            tambahan={{ verbatim: 'ya' }}
             boleh
             pesanBerhasil="Tersimpan"
             onBerhasil={(isi, data) => setTahap({ jenis: 'selesai', id: String((data as { id?: string } | null)?.id || isi.id || 'baris baru') })}

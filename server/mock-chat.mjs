@@ -31,9 +31,16 @@ function tunggu(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-export async function chatTiruan({ nomor, teks, gambar_base64 }, percakapan) {
+export async function chatTiruan({ nomor, teks, gambar_base64 }, percakapan, cariVerbatim = () => null) {
   await tunggu(900 + Math.random() * 1300);
   if (gambar_base64) return gambarTiruan(nomor, teks, percakapan);
+  const persis = cariVerbatim(teks);
+  if (persis) {
+    const id_giliran = `g-${idAcak()}`;
+    const w = waktu(Date.now());
+    percakapan.set(nomor, [...(percakapan.get(nomor) || []), { waktu: w, arah: 'masuk', pesan: teks, id_giliran }, { waktu: w, arah: 'keluar', pesan: persis.jawaban, id_giliran }]);
+    return { ok: true, data: normalisasiChat({ balasan: persis.jawaban, pengetahuan_dipakai: [persis.id], alat: [], token_in: 0, token_out: 0, latensi_ms: 180, id_giliran, topik: persis.topik, sumber_cara: 'verbatim', model: 'verbatim' }) };
+  }
   const pola = POLA.find((x) => x.cocok.test(teks));
   if (pola && pola.galat) return { ok: false, kode: 504, galat: 'n8n tidak menjawab dalam 90 detik. (tiruan)' };
   const id_giliran = `g-${idAcak()}`;

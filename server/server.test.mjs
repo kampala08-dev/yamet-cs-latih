@@ -185,3 +185,12 @@ test('U1.10: chat gambar diteruskan apa adanya, mime divalidasi, isi_gambar dino
   assert.equal(normalisasiChat({ isi_gambar: 'bukti transfer' }).isi_gambar, 'bukti transfer');
   assert.equal(normalisasiChat({ model: 'MiniMax-M3' }).model, 'MiniMax-M3');
 });
+
+test('U1.13: pengetahuan_verbatim dan verbatim di pengetahuan_tulis', () => {
+  const admin = { nama: 'Rio', peran: 'admin' };
+  assert.deepEqual(susunAksi({ aksi: 'pengetahuan_verbatim', id: 'P018', verbatim: 'ya' }, admin).body, { aksi: 'pengetahuan_verbatim', id: 'P018', verbatim: 'ya' });
+  assert.equal(susunAksi({ aksi: 'pengetahuan_verbatim', id: 'P018', verbatim: 'tidak' }, admin).kode, 400);
+  assert.equal(susunAksi({ aksi: 'pengetahuan_verbatim', id: 'P018', verbatim: 'ya' }, { nama: 'U', peran: 'latih' }).kode, 403);
+  assert.equal(susunAksi({ aksi: 'pengetahuan_tulis', id: 'P018', topik: 'lokasi_jam', jawaban: 'x', verbatim: 'ya' }, admin).body.verbatim, 'ya');
+  assert.equal('verbatim' in susunAksi({ aksi: 'pengetahuan_tulis', id: 'P018', topik: 'lokasi_jam', jawaban: 'x' }, admin).body, false);
+});

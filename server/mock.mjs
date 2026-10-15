@@ -138,7 +138,12 @@ export function buatMock(sekarang = () => Date.now()) {
     },
     grafik: ({ rentang }) => grafik(rentang, t0),
     layanan: () => [['P002', 'Terapi Wicara', 38], ['P003', 'Sensori Integrasi', 21], ['P004', 'Terapi Okupasi', 17], ['P005', 'Terapi Perilaku', 12], ['P007', 'Fisioterapi', 5]].map(([id, nama, jumlah]) => ({ id, nama, jumlah })),
-    pengetahuan_baca: () => pengetahuan,
+    pengetahuan_baca: () => pengetahuan.map((p) => ({ ...p, verbatim: p.verbatim ?? '' })),
+    pengetahuan_verbatim: ({ id, verbatim }) => {
+      if (!pengetahuan.some((p) => p.id === id)) throw new Error(`${id} tidak ada di Pengetahuan`);
+      pengetahuan = pengetahuan.map((p) => (p.id === id ? { ...p, verbatim } : p));
+      return { id, verbatim };
+    },
     eskalasi_daftar: ({ nomor_hash }) => eskalasi.filter((e) => !nomor_hash || e.nomor_hash === nomor_hash).map(({ '3_pesan_terakhir': p3, ...e }) => ({ ...e, pesan_terakhir: p3, nomor: samarkan(e.nomor) })),
     jam_ganti_daftar: ({ anak, nomor_hash }) => riwayatJamGanti.filter((j) => (!anak || j.anak.toLowerCase() === anak.toLowerCase()) && (!nomor_hash || j.nomor_hash === nomor_hash)),
     // U1.6: tanpa nomor_hash (usulan U1.7 belum diambil); umpan_balik baru ada di U1.8.
@@ -178,16 +183,21 @@ export function buatMock(sekarang = () => Date.now()) {
       lead = [baris, ...lead];
       return { id: baris.id, waktu: w };
     },
-    pengetahuan_tulis: ({ id, topik, pertanyaan_variasi, jawaban }) => {
+    pengetahuan_tulis: ({ id, topik, pertanyaan_variasi, jawaban, verbatim }) => {
       const idBaru = id || `P${String(pengetahuan.length + 1).padStart(3, '0')}`;
-      const baris = { id: idBaru, topik, pertanyaan_variasi, jawaban };
+      const lama = pengetahuan.find((p) => p.id === idBaru);
+      const baris = { id: idBaru, topik, pertanyaan_variasi, jawaban, verbatim: verbatim ?? lama?.verbatim ?? '' };
       pengetahuan = pengetahuan.some((p) => p.id === idBaru) ? pengetahuan.map((p) => (p.id === idBaru ? baris : p)) : [...pengetahuan, baris];
       return { id: idBaru, baris: pengetahuan.findIndex((p) => p.id === idBaru) + 2, baru: !id };
     },
   };
 
   return {
-    chat: (body) => chatTiruan(body, percakapanLatih),
+    // Baris verbatim: pertanyaan sama persis dengan salah satu variasi = jawaban dikirim apa adanya.
+    chat: (body) => chatTiruan(body, percakapanLatih, (t) => {
+      const norm = (x) => String(x || '').trim().toLowerCase();
+      return pengetahuan.find((p) => p.verbatim === 'ya' && String(p.pertanyaan_variasi || '').split('|').some((v) => norm(v) === norm(t)));
+    }),
     async aksi(body, { admin = false } = {}) {
       await tunggu(250 + Math.random() * 450);
       const f = Object.hasOwn(tanganan, body.aksi) ? tanganan[body.aksi] : null;

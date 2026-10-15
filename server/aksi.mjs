@@ -177,7 +177,17 @@ const ATURAN = {
       if (id && !/^P\d{3,4}$/.test(id)) throw new Error('id Pengetahuan berbentuk P001');
       const topik = teks(b.topik, 40, true);
       if (!/^[a-z0-9_]{2,40}$/.test(topik)) throw new Error('topik hanya huruf kecil, angka, garis bawah');
-      return { id, topik, pertanyaan_variasi: teks(b.pertanyaan_variasi, 1000), jawaban: teks(b.jawaban, 2000, true) };
+      const verbatim = b.verbatim === undefined ? {} : { verbatim: pilihan(b.verbatim, ['ya', '']) };
+      return { id, topik, pertanyaan_variasi: teks(b.pertanyaan_variasi, 1000), jawaban: teks(b.jawaban, 2000, true), ...verbatim };
+    },
+  },
+  // U1.13: tanda "jawab persis" per baris Pengetahuan.
+  pengetahuan_verbatim: {
+    tulis: true,
+    susun: (b) => {
+      const id = teks(b.id, 8, true);
+      if (!/^P\d{3,4}$/.test(id)) throw new Error('id Pengetahuan berbentuk P001');
+      return { id, verbatim: pilihan(b.verbatim, ['ya', '']) };
     },
   },
   // Usulan U1.7: tombol Setujui/Tolak jam ganti dari CRM.

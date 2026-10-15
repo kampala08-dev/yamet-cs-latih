@@ -4,6 +4,7 @@ import { Info } from '@phosphor-icons/react';
 import { angka, detik } from '../../lib/format';
 import type { JawabanChat, Label } from '../../lib/tipe';
 import { LabelGiliran } from '../../components/LabelGiliran';
+import { Chip } from '../../components/Chip';
 import { PEGAS } from '../../lib/gerak';
 
 
@@ -73,7 +74,8 @@ export const Gelembung = memo(function Gelembung({ pesan, terpilih, onPilih, onL
         <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 pl-1 font-mono text-[11px] text-zinc-500">
           <span>{detik(b.latensi_ms)}</span>
           <span>{angka(b.token_in + b.token_out)} token</span>
-          {b.model && <span>{b.model}</span>}
+          {b.sumber_cara === 'verbatim' ? <span className="font-sans"><Chip nada="hijau">Jawaban persis</Chip></span> : null}
+          {(b.sumber_cara === 'verbatim' || b.model) && <span>{b.sumber_cara === 'verbatim' ? 'verbatim' : b.model}</span>}
           {b.pengetahuan_dipakai.length > 0 && <span>{b.pengetahuan_dipakai.join(' ')}</span>}
           {b.tool_dipanggil.length > 0 && <span>{b.tool_dipanggil.length} alat</span>}
           <button type="button" onClick={() => onPilih(pesan.id)} className="inline-flex h-9 items-center gap-1 rounded-md px-1.5 font-sans text-[12px] text-zinc-600 underline-offset-2 hover:underline">

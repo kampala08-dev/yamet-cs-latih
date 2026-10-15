@@ -3,6 +3,7 @@ import { CheckCircle, XCircle } from '@phosphor-icons/react';
 import pengetahuan from '../../data/pengetahuan.json';
 import { angka, topikManusia } from '../../lib/format';
 import type { JawabanChat } from '../../lib/tipe';
+import { Chip } from '../../components/Chip';
 import { PEGAS } from '../../lib/gerak';
 
 const KAMUS = pengetahuan as Record<string, { topik: string; contoh: string }>;
@@ -24,7 +25,8 @@ export function PanelBukti({ bukti }: { bukti: JawabanChat | null }) {
     <motion.div key={bukti.id_giliran} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={PEGAS} className="space-y-5">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="font-mono text-[12px] text-zinc-500">id_giliran {bukti.id_giliran || '-'}</span>
-        <span className="font-mono text-[12px] text-zinc-500">Model {bukti.model || '-'}</span>
+        <span className="font-mono text-[12px] text-zinc-500">Model {bukti.sumber_cara === 'verbatim' ? 'verbatim' : bukti.model || '-'}</span>
+        {bukti.sumber_cara === 'verbatim' && <Chip nada="hijau">Jawaban persis</Chip>}
         {bukti.topik && <span className="rounded-md bg-zinc-100 px-2 py-0.5 text-[12px] text-zinc-700">{topikManusia(bukti.topik)}</span>}
       </div>
 

@@ -210,6 +210,7 @@ export interface BarisLayanan {
 
 export interface BarisPengetahuan {
   id: string;
+  verbatim?: string;
   topik: string;
   pertanyaan_variasi: string;
   jawaban: string;
