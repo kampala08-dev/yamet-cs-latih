@@ -24,7 +24,7 @@ function gambarTiruan(nomor, teks, percakapan) {
   const balasan = 'Terima kasih, Ayah/Bunda, gambarnya sudah kami terima. Bila ini bukti transfer, admin akan memeriksa dan mengonfirmasi di jam kerja.';
   const w = waktu(Date.now());
   percakapan.set(nomor, [...(percakapan.get(nomor) || []), { waktu: w, arah: 'masuk', pesan: `[gambar] ${teks}`.trim(), id_giliran }, { waktu: w, arah: 'keluar', pesan: balasan, id_giliran }]);
-  return { ok: true, data: normalisasiChat({ balasan, pengetahuan_dipakai: [], alat: [], token_in: 3120, token_out: 48, latensi_ms: 6400, id_giliran, topik: 'gambar', sumber_cara: 'tidak ada', isi_gambar: '(tiruan) Tangkapan layar bukti transfer bank, nominal Rp 850.000, tanggal 15 Okt 2026.' }) };
+  return { ok: true, data: normalisasiChat({ balasan, pengetahuan_dipakai: [], alat: [], token_in: 3120, token_out: 48, latensi_ms: 6400, id_giliran, topik: 'gambar', sumber_cara: 'tidak ada', model: 'MiniMax-M3', isi_gambar: '(tiruan) Tangkapan layar bukti transfer bank, nominal Rp 850.000, tanggal 15 Okt 2026.' }) };
 }
 
 function tunggu(ms) {
@@ -57,6 +57,7 @@ export async function chatTiruan({ nomor, teks, gambar_base64 }, percakapan) {
       id_giliran,
       topik: pola ? pola.topik : 'umum',
       sumber_cara: pola && pola.p.length ? 'penanda model' : 'tidak ada',
+      model: 'MiniMax-M3',
     }),
   };
 }

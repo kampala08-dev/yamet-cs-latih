@@ -31,6 +31,7 @@ export function normalisasiChat(r) {
     topik: String(x.topik ?? ''),
     sumber_cara: String(x.sumber_cara ?? ''),
     isi_gambar: x.isi_gambar ? String(x.isi_gambar) : '',
+    model: x.model ? String(x.model) : '',
   };
 }
 

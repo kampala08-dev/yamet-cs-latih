@@ -26,6 +26,7 @@ export interface JawabanChat {
   topik: string;
   sumber_cara: string;
   isi_gambar?: string;
+  model?: string;
 }
 
 export type Label = 'Benar' | 'Salah';

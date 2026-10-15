@@ -183,4 +183,5 @@ test('U1.10: chat gambar diteruskan apa adanya, mime divalidasi, isi_gambar dino
   assert.equal(panggilanN8n.at(-1).body.mime, 'image/jpeg');
   assert.equal((await post('/api/chat', { nomor: 'latih-gbr001', teks: 'x', gambar_base64: 'aGVsbG8=', mime: 'image/gif' }, c)).status, 400);
   assert.equal(normalisasiChat({ isi_gambar: 'bukti transfer' }).isi_gambar, 'bukti transfer');
+  assert.equal(normalisasiChat({ model: 'MiniMax-M3' }).model, 'MiniMax-M3');
 });

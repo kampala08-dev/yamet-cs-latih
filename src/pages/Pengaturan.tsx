@@ -27,6 +27,7 @@ function Konfigurasi() {
         <motion.ul variants={INDUK_DAFTAR} initial="awal" animate="tampil" className="divide-y divide-zinc-100">
           {baris.map((r) => <BarisKonfigurasi key={r.kunci} r={r} bolehUbah={sesi.peran === 'admin'} />)}
         </motion.ul>
+        <p className="mt-3 text-[12px] text-zinc-500">Perubahan berlaku pada bot paling lama 1 menit.</p>
       </KeadaanData>
     </Ubin>
   );
