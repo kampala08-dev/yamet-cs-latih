@@ -14,6 +14,8 @@ export interface Pesan {
   bukti?: JawabanChat;
   label?: Label;
   koreksi?: string;
+  // Pratinjau kecil (data URL) hanya untuk tampilan; tidak disimpan di sessionStorage.
+  gambar?: string;
 }
 
 // Tautan hanya http(s); React tetap meng-escape seluruh teks.
@@ -44,9 +46,12 @@ export const Gelembung = memo(function Gelembung({ pesan, terpilih, onPilih, onL
   if (pesan.dari === 'ortu') {
     return (
       <motion.li initial={awal} animate={{ opacity: 1, y: 0 }} transition={PEGAS} className="flex justify-end">
-        <p className="max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-md bg-zinc-900 px-4 py-2.5 text-[15px] leading-relaxed text-zinc-50">
-          {pesan.teks}
-        </p>
+        <div className="flex max-w-[85%] flex-col items-end gap-1.5">
+          {pesan.gambar && <img src={pesan.gambar} alt="Gambar yang dikirim" width={160} className="h-auto w-40 rounded-2xl border border-zinc-200 object-cover" />}
+          {pesan.teks && (
+            <p className="whitespace-pre-wrap break-words rounded-2xl rounded-br-md bg-zinc-900 px-4 py-2.5 text-[15px] leading-relaxed text-zinc-50">{pesan.teks}</p>
+          )}
+        </div>
       </motion.li>
     );
   }

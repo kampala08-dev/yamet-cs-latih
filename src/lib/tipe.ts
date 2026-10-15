@@ -25,6 +25,7 @@ export interface JawabanChat {
   id_giliran: string;
   topik: string;
   sumber_cara: string;
+  isi_gambar?: string;
 }
 
 export type Label = 'Benar' | 'Salah';

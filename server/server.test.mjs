@@ -174,3 +174,13 @@ test('galat bisnis n8n (409) diteruskan dengan kode dan pesannya', async () => {
   const r = await k.aksi({ aksi: 'lead_tulis' });
   assert.deepEqual(r, { ok: false, kode: 409, galat: 'nomor sudah ada di Lead baris 5' });
 });
+
+test('U1.10: chat gambar diteruskan apa adanya, mime divalidasi, isi_gambar dinormalisasi', async () => {
+  const c = await masuk();
+  const ok = await post('/api/chat', { nomor: 'latih-gbr001', teks: '', gambar_base64: 'aGVsbG8=', mime: 'image/jpeg' }, c);
+  assert.equal(ok.status, 200);
+  assert.equal(panggilanN8n.at(-1).body.gambar_base64, 'aGVsbG8=');
+  assert.equal(panggilanN8n.at(-1).body.mime, 'image/jpeg');
+  assert.equal((await post('/api/chat', { nomor: 'latih-gbr001', teks: 'x', gambar_base64: 'aGVsbG8=', mime: 'image/gif' }, c)).status, 400);
+  assert.equal(normalisasiChat({ isi_gambar: 'bukti transfer' }).isi_gambar, 'bukti transfer');
+});

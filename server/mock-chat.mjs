@@ -19,12 +19,21 @@ const POLA = [
 
 const JAWAB_LAIN = 'Terima kasih, Ayah/Bunda. Untuk pertanyaan ini admin kami akan menghubungi di jam kerja. Ada hal lain yang bisa saya bantu?';
 
+function gambarTiruan(nomor, teks, percakapan) {
+  const id_giliran = `g-${idAcak()}`;
+  const balasan = 'Terima kasih, Ayah/Bunda, gambarnya sudah kami terima. Bila ini bukti transfer, admin akan memeriksa dan mengonfirmasi di jam kerja.';
+  const w = waktu(Date.now());
+  percakapan.set(nomor, [...(percakapan.get(nomor) || []), { waktu: w, arah: 'masuk', pesan: `[gambar] ${teks}`.trim(), id_giliran }, { waktu: w, arah: 'keluar', pesan: balasan, id_giliran }]);
+  return { ok: true, data: normalisasiChat({ balasan, pengetahuan_dipakai: [], alat: [], token_in: 3120, token_out: 48, latensi_ms: 6400, id_giliran, topik: 'gambar', sumber_cara: 'tidak ada', isi_gambar: '(tiruan) Tangkapan layar bukti transfer bank, nominal Rp 850.000, tanggal 15 Okt 2026.' }) };
+}
+
 function tunggu(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-export async function chatTiruan({ nomor, teks }, percakapan) {
+export async function chatTiruan({ nomor, teks, gambar_base64 }, percakapan) {
   await tunggu(900 + Math.random() * 1300);
+  if (gambar_base64) return gambarTiruan(nomor, teks, percakapan);
   const pola = POLA.find((x) => x.cocok.test(teks));
   if (pola && pola.galat) return { ok: false, kode: 504, galat: 'n8n tidak menjawab dalam 90 detik. (tiruan)' };
   const id_giliran = `g-${idAcak()}`;

@@ -42,7 +42,8 @@ export const api = {
   sesi: (signal?: AbortSignal) => minta<InfoSesi>('/api/sesi', undefined, signal),
   masuk: (nama: string, sandi: string) => minta<InfoSesi>('/api/masuk', { nama, sandi }),
   keluar: () => minta<null>('/api/keluar', {}),
-  chat: (nomor: string, teks: string) => minta<JawabanChat>('/api/chat', { nomor, teks }),
+  chat: (nomor: string, teks: string, gambar?: { base64: string; mime: string }) =>
+    minta<JawabanChat>('/api/chat', { nomor, teks, ...(gambar ? { gambar_base64: gambar.base64, mime: gambar.mime } : {}) }),
   aksi: <T>(aksi: string, isi: Record<string, unknown> = {}, signal?: AbortSignal) =>
     minta<T>('/api/aksi', { aksi, ...isi }, signal),
 };

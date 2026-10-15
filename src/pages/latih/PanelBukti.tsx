@@ -33,6 +33,13 @@ export function PanelBukti({ bukti }: { bukti: JawabanChat | null }) {
         </p>
       )}
 
+      {bukti.isi_gambar && (
+        <section className="space-y-1">
+          <Judul>Isi gambar (vision)</Judul>
+          <p className="rounded-xl bg-biru-50 px-3 py-2 text-[13px] leading-relaxed text-zinc-800">{bukti.isi_gambar}</p>
+        </section>
+      )}
+
       <dl className="grid grid-cols-3 divide-x divide-zinc-200 border-y border-zinc-200 py-3">
         {[
           ['Latensi', `${angka(bukti.latensi_ms / 1000, 1)}`, 'dtk'],

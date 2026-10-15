@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
-import { ArrowCounterClockwise, ListChecks, PaperPlaneRight } from '@phosphor-icons/react';
+import { ArrowCounterClockwise, ListChecks, PaperPlaneRight, Paperclip, X } from '@phosphor-icons/react';
+import { MIME_DITERIMA, siapkanGambar, type Lampiran } from '../lib/gambar';
 import { api } from '../lib/api';
 import { sesiBaru } from '../lib/format';
 import type { Label } from '../lib/tipe';
@@ -58,16 +59,21 @@ export function Latih() {
   const [sesi, setSesi] = useState<SesiLatih>(bacaSesi);
   const [teks, setTeks] = useState('');
   const [menunggu, setMenunggu] = useState(false);
-  const [galatKirim, setGalatKirim] = useState<{ pesan: string; teks: string } | null>(null);
+  const [galatKirim, setGalatKirim] = useState<{ pesan: string; teks: string; gambar?: Lampiran } | null>(null);
   const [terpilih, setTerpilih] = useState<string>('');
   const [lembar, setLembar] = useState(false);
   const ujungRef = useRef<HTMLDivElement>(null);
   const masukanRef = useRef<HTMLTextAreaElement>(null);
+  const berkasRef = useRef<HTMLInputElement>(null);
+  const [lampiran, setLampiran] = useState<Lampiran | null>(null);
+  const [galatGambar, setGalatGambar] = useState('');
+  const [seret, setSeret] = useState(false);
   const [idAwal] = useState(() => new Set(sesi.pesan.map((p) => p.id)));
 
   useEffect(() => {
     try {
-      sessionStorage.setItem(KUNCI_SESI, JSON.stringify(sesi));
+      // Pratinjau gambar tidak disimpan supaya sessionStorage tetap kecil.
+      sessionStorage.setItem(KUNCI_SESI, JSON.stringify({ ...sesi, pesan: sesi.pesan.map(({ gambar: _g, ...p }) => p) }));
     } catch {
       // Abaikan: percakapan tetap ada sampai halaman dimuat ulang.
     }
@@ -79,16 +85,16 @@ export function Latih() {
     return () => cancelAnimationFrame(id);
   }, [sesi.pesan.length, menunggu]);
 
-  const kirimKeBot = useCallback(async (isi: string, nomor: string) => {
+  const kirimKeBot = useCallback(async (isi: string, nomor: string, gambar?: Lampiran) => {
     setMenunggu(true);
     setGalatKirim(null);
     try {
-      const bukti = await api.chat(nomor, isi);
+      const bukti = await api.chat(nomor, isi, gambar);
       const id = idLokal();
       setSesi((s) => (s.nomor !== nomor ? s : { ...s, pesan: [...s.pesan, { id, dari: 'bot', teks: bukti.balasan, bukti }] }));
       setTerpilih(id);
     } catch (e) {
-      setGalatKirim({ pesan: e instanceof Error ? e.message : String(e), teks: isi });
+      setGalatKirim({ pesan: e instanceof Error ? e.message : String(e), teks: isi, gambar });
     } finally {
       setMenunggu(false);
     }
@@ -97,10 +103,22 @@ export function Latih() {
   function kirim(e?: FormEvent) {
     e?.preventDefault();
     const isi = teks.trim();
-    if (!isi || menunggu) return;
-    setSesi((s) => ({ ...s, pesan: [...s.pesan, { id: idLokal(), dari: 'ortu', teks: isi }] }));
+    if ((!isi && !lampiran) || menunggu) return;
+    const gambar = lampiran ?? undefined;
+    setSesi((s) => ({ ...s, pesan: [...s.pesan, { id: idLokal(), dari: 'ortu', teks: isi, gambar: gambar?.pratinjau }] }));
     setTeks('');
-    void kirimKeBot(isi, sesi.nomor);
+    setLampiran(null);
+    void kirimKeBot(isi, sesi.nomor, gambar);
+  }
+
+  async function pilihBerkas(file: File | undefined) {
+    if (!file) return;
+    setGalatGambar('');
+    try {
+      setLampiran(await siapkanGambar(file));
+    } catch (e) {
+      setGalatGambar(e instanceof Error ? e.message : String(e));
+    }
   }
 
   function tekanTombol(e: KeyboardEvent<HTMLTextAreaElement>) {
@@ -186,9 +204,26 @@ export function Latih() {
           )}
         </ol>
 
-        <form onSubmit={kirim} className="sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] -mx-4 border-t border-zinc-200 bg-zinc-50/95 px-4 pb-3 pt-3 backdrop-blur md:mx-0 lg:bottom-4 md:rounded-2xl md:border md:bg-white md:p-3 md:shadow-[0_12px_32px_-16px_rgba(63,63,70,0.25)]">
+        <form
+          onSubmit={kirim}
+          onDragOver={(e) => { e.preventDefault(); setSeret(true); }}
+          onDragLeave={() => setSeret(false)}
+          onDrop={(e) => { e.preventDefault(); setSeret(false); void pilihBerkas(e.dataTransfer.files[0]); }}
+          className={`${seret ? 'ring-2 ring-kuning-400 ' : ''}sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] -mx-4 border-t border-zinc-200 bg-zinc-50/95 px-4 pb-3 pt-3 backdrop-blur md:mx-0 lg:bottom-4 md:rounded-2xl md:border md:bg-white md:p-3 md:shadow-[0_12px_32px_-16px_rgba(63,63,70,0.25)]`}
+        >
+          {lampiran && (
+            <div className="mb-2 flex items-center gap-2">
+              <img src={lampiran.pratinjau} alt="Pratinjau gambar" width={64} className="h-16 w-16 rounded-xl border border-zinc-200 object-cover" />
+              <span className="text-[12px] text-zinc-500">Gambar siap dikirim (dikompres maks 1280 px)</span>
+              <button type="button" onClick={() => setLampiran(null)} aria-label="Hapus gambar" className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-xl text-zinc-500 hover:bg-zinc-100 active:scale-[0.98]"><X size={20} /></button>
+            </div>
+          )}
           <label htmlFor="pesan-latih" className="sr-only">Pesan sebagai orang tua</label>
           <div className="flex items-end gap-2">
+            <input ref={berkasRef} type="file" accept={MIME_DITERIMA.join(',')} className="sr-only" tabIndex={-1} aria-hidden="true" onChange={(e) => { void pilihBerkas(e.target.files?.[0]); e.target.value = ''; }} />
+            <button type="button" onClick={() => berkasRef.current?.click()} aria-label="Lampirkan gambar" title="Lampirkan gambar (JPEG/PNG/WebP, maks 5 MB) atau seret ke sini" className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-zinc-600 hover:bg-zinc-100 active:scale-[0.98]">
+              <Paperclip size={20} />
+            </button>
             <textarea
               id="pesan-latih"
               ref={masukanRef}
@@ -202,7 +237,7 @@ export function Latih() {
             />
             <button
               type="submit"
-              disabled={!teks.trim() || menunggu}
+              disabled={(!teks.trim() && !lampiran) || menunggu}
               aria-label="Kirim"
               className="inline-flex h-11 w-11 shrink-0 items-center justify-center gap-2 rounded-xl border border-kuning-600/30 bg-kuning-400 text-sm font-medium text-zinc-900 transition-[background-color,transform] hover:bg-kuning-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 md:w-auto md:px-5"
             >
@@ -210,9 +245,10 @@ export function Latih() {
               <span className="hidden md:inline">Kirim</span>
             </button>
           </div>
+          {galatGambar && <p role="alert" className="mt-2 text-[13px] text-bata-700">{galatGambar}</p>}
           {galatKirim && (
             <div className="mt-3">
-              <GalatInline pesan={galatKirim.pesan} onCobaLagi={() => kirimKeBot(galatKirim.teks, sesi.nomor)} />
+              <GalatInline pesan={galatKirim.pesan} onCobaLagi={() => kirimKeBot(galatKirim.teks, sesi.nomor, galatKirim.gambar)} />
             </div>
           )}
         </form>

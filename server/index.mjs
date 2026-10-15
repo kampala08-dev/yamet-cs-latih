@@ -11,6 +11,7 @@ import { buatMock } from './mock.mjs';
 
 const BATAS_PANGGILAN_PER_MENIT = 60;
 const MAKS_TEKS = 2000;
+const MIME_GAMBAR = ['image/jpeg', 'image/png', 'image/webp'];
 const RUTE_HALAMAN = ['/', '/masuk', '/latih', '/crm', '/ikhtisar', '/pipeline', '/jadwal', '/percakapan', '/eskalasi', '/klien', '/pengaturan'];
 
 const CSP = [
@@ -68,6 +69,8 @@ export function buatApp(konfig, { klien, sekarang = () => Date.now() } = {}) {
     if (req.method === 'POST' && !req.is('application/json')) return balasGalat(res, 415, 'Content-Type harus application/json');
     next();
   });
+  // /api/chat boleh membawa gambar (base64, U1.10): batas 8 MB; rute lain tetap 16 kB.
+  app.use('/api/chat', express.json({ limit: '8mb' }));
   app.use('/api', express.json({ limit: '16kb' }));
 
   function sesiDari(req) {
@@ -122,11 +125,15 @@ export function buatApp(konfig, { klien, sekarang = () => Date.now() } = {}) {
   app.post('/api/chat', async (req, res) => {
     const teks = typeof req.body?.teks === 'string' ? req.body.teks.trim() : '';
     const nomor = typeof req.body?.nomor === 'string' ? req.body.nomor : '';
-    if (!teks) return balasGalat(res, 400, 'Pesan kosong.');
+    const gambar = typeof req.body?.gambar_base64 === 'string' ? req.body.gambar_base64 : '';
+    const mime = typeof req.body?.mime === 'string' ? req.body.mime : '';
+    if (gambar && (!MIME_GAMBAR.includes(mime) || !/^[A-Za-z0-9+/=]+$/.test(gambar))) return balasGalat(res, 400, 'Gambar harus jpeg, png, atau webp (base64).');
+    if (!teks && !gambar) return balasGalat(res, 400, 'Pesan kosong.');
     if (teks.length > MAKS_TEKS) return balasGalat(res, 400, `Pesan terlalu panjang (maks ${MAKS_TEKS} karakter).`);
     if (!NOMOR_LATIH.test(nomor)) return balasGalat(res, 400, 'Nomor sesi harus berbentuk latih-<acak>.');
     try {
-      const r = await n8n.chat({ nomor, teks, nama_tampil: amanSheet(req.sesi.nama) });
+      // Gambar diteruskan apa adanya ke n8n, tidak disimpan di server ini.
+      const r = await n8n.chat({ nomor, teks, nama_tampil: amanSheet(req.sesi.nama), ...(gambar ? { gambar_base64: gambar, mime } : {}) });
       if (!r.ok) return balasGalat(res, r.kode || 502, r.galat);
       return res.json({ ok: true, data: r.data });
     } catch (e) {
