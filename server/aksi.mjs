@@ -181,6 +181,15 @@ const ATURAN = {
       return { id, topik, pertanyaan_variasi: teks(b.pertanyaan_variasi, 1000), jawaban: teks(b.jawaban, 2000, true), ...verbatim };
     },
   },
+  // U1.15: admin membalas orang tua dari panel transkrip (nama admin diisi server dari sesi).
+  balas_admin: {
+    tulis: true,
+    susun: (b) => {
+      const nomor_hash = teks(b.nomor_hash, 64, true);
+      if (!HASH.test(nomor_hash)) throw new Error('nomor_hash tidak sah');
+      return { nomor_hash, teks: teks(b.teks, 1000, true) };
+    },
+  },
   // U1.13: tanda "jawab persis" per baris Pengetahuan.
   pengetahuan_verbatim: {
     tulis: true,
@@ -203,7 +212,7 @@ export function susunAksi(masukan, sesi) {
   if (!aturan) return { galat: 'aksi tidak dikenal', kode: 400 };
   if (aturan.tulis && sesi.peran !== 'admin') return { galat: 'hanya admin yang boleh mengubah data ini', kode: 403 };
   try {
-    const isi = { ...aturan.susun(masukan, sesi), ...(aksi === 'eskalasi_status' || aksi === 'jam_ganti_status' ? { admin: sesi.nama } : {}) };
+    const isi = { ...aturan.susun(masukan, sesi), ...(['eskalasi_status', 'jam_ganti_status', 'balas_admin'].includes(aksi) ? { admin: sesi.nama } : {}) };
     // Validasi dulu, baru amankan semua teks yang akan ditulis ke sheet.
     const aman = Object.fromEntries(Object.entries(isi).map(([k, v]) => [k, typeof v === 'string' ? amanSheet(v) : v]));
     return { body: { aksi, ...aman } };

@@ -106,7 +106,7 @@ export function buatPercakapan(t0, lead, eskalasi) {
     const klien = anak && ['Rafa', 'Nadia', 'Arka'].includes(anak);
     return {
       jenis: klien ? 'klien' : 'lead',
-      nomor_hash: klien ? hashNomor(nomor) : l ? l.nomor_hash : e ? e.nomor_hash : hashNomor(nomor), nomor_samar: samarkan(nomor),
+      nomor_hash: klien ? hashNomor(nomor) : l ? l.nomor_hash : e ? e.nomor_hash : hashNomor(nomor), nomor_samar: samarkan(nomor), nomor,
       nama: l ? `${l.nama_ortu} (${anak})` : '', pesan_terakhir: pesan, waktu: waktu(t0 - lalu), status,
       id_eskalasi: e ? e.id : '',
     };

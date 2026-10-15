@@ -53,7 +53,7 @@ function Pengetahuan() {
       className="col-span-12 xl:col-span-7"
       aksi={<Tombol ukuran="kecil" varian="utama" onClick={() => setSunting('baru')} ikon={<Plus size={20} />}>Tambah</Tombol>}
     >
-      <p className="mb-3 text-[12px] text-zinc-500">Jawab persis: bila pertanyaan orang tua sama dengan salah satu variasi, jawaban dikirim persis tanpa model.</p>
+      <p className="mb-3 text-[12px] text-zinc-500">Jawab persis: bila pertanyaan orang tua sama dengan salah satu variasi, jawaban dikirim persis tanpa model. Tulis [[SALAM]] di awal jawaban untuk membalas salam sesuai salam orang tua.</p>
       <div className="relative mb-3">
         <label htmlFor="cari-pengetahuan" className="sr-only">Cari Pengetahuan</label>
         <MagnifyingGlass size={20} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />

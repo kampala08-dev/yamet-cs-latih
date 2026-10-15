@@ -58,6 +58,7 @@ export interface BarisLead {
 
 export interface BarisEskalasi {
   id?: string;
+  kanal?: string;
   pesan_terakhir?: string;
   waktu_selesai?: string;
   waktu: string;
@@ -108,6 +109,8 @@ export interface BarisAudit {
 }
 
 export interface BarisLog {
+  tool_dipanggil?: string | string[];
+  status?: string;
   waktu: string;
   arah: string;
   pesan: string;
@@ -181,6 +184,7 @@ export interface BarisPercakapan {
   id_eskalasi?: string;
   jenis?: JenisPercakapan;
   kanal?: string;
+  nomor?: string;
 }
 
 export interface BarisJadwal {

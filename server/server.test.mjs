@@ -194,3 +194,11 @@ test('U1.13: pengetahuan_verbatim dan verbatim di pengetahuan_tulis', () => {
   assert.equal(susunAksi({ aksi: 'pengetahuan_tulis', id: 'P018', topik: 'lokasi_jam', jawaban: 'x', verbatim: 'ya' }, admin).body.verbatim, 'ya');
   assert.equal('verbatim' in susunAksi({ aksi: 'pengetahuan_tulis', id: 'P018', topik: 'lokasi_jam', jawaban: 'x' }, admin).body, false);
 });
+
+test('U1.15: balas_admin hanya admin, nama admin dari sesi, teks wajib', () => {
+  const admin = { nama: 'Rio', peran: 'admin' };
+  const h = 'd'.repeat(64);
+  assert.deepEqual(susunAksi({ aksi: 'balas_admin', nomor_hash: h, teks: 'Baik Bunda', admin: 'palsu' }, admin).body, { aksi: 'balas_admin', nomor_hash: h, teks: 'Baik Bunda', admin: 'Rio' });
+  assert.equal(susunAksi({ aksi: 'balas_admin', nomor_hash: h, teks: '' }, admin).kode, 400);
+  assert.equal(susunAksi({ aksi: 'balas_admin', nomor_hash: h, teks: 'x' }, { nama: 'U', peran: 'latih' }).kode, 403);
+});

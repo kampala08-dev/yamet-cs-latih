@@ -15,6 +15,9 @@ import { HeaderHalaman, IsiHalaman } from '../components/HeaderHalaman';
 import { GalatInline, Kerangka, KeadaanData, Kosong } from '../components/Keadaan';
 import { Tombol } from '../components/Tombol';
 import { Ubin } from '../components/Ubin';
+import { PanelSamping } from '../components/PanelSamping';
+import { Transkrip } from '../components/Transkrip';
+import { bolehBukaWa, siapkanTabWa } from '../lib/wa';
 import { Linimasa, susunLinimasa } from './klien/Linimasa';
 
 const BERLAKU_BAWAAN = 90;
@@ -23,14 +26,20 @@ function AksiKlien({ k, idTerbuka }: { k: BarisKlien; idTerbuka?: string }) {
   const { sesi } = useSesi();
   const [status, setStatus] = useState<'diam' | 'proses' | 'ok'>('diam');
   const [galat, setGalat] = useState('');
+  const [transkrip, setTranskrip] = useState(false);
   if (sesi.peran !== 'admin') return null;
   async function ambil() {
+    // Klien Aktif = orang tua di WhatsApp; tab WA dibuka sinkron saat klik lalu diarahkan setelah sukses.
+    const tab = siapkanTabWa(bolehBukaWa(sesi.peran, k.nomor_ortu, 'wa'));
     setStatus('proses');
     setGalat('');
     try {
-      await api.aksi('eskalasi_status', idTerbuka ? { id: idTerbuka, status: 'Diambil' } : { nomor_hash: k.nomor_hash, status: 'Diambil' });
+      const hasil = await api.aksi<{ nomor?: string }>('eskalasi_status', idTerbuka ? { id: idTerbuka, status: 'Diambil' } : { nomor_hash: k.nomor_hash, status: 'Diambil' });
+      tab.arahkan(hasil?.nomor || k.nomor_ortu);
       setStatus('ok');
+      setTranskrip(true);
     } catch (e) {
+      tab.batal();
       setStatus('diam');
       setGalat(e instanceof Error ? e.message : String(e));
     }
@@ -48,6 +57,11 @@ function AksiKlien({ k, idTerbuka }: { k: BarisKlien; idTerbuka?: string }) {
         </Tombol>
       )}
       {galat && <p role="alert" className="w-full text-[13px] text-bata-700">{galat}</p>}
+      <PanelSamping terbuka={transkrip && Boolean(k.nomor_hash)} onTutup={() => setTranskrip(false)} judul={`${k.nama_anak} · ${k.nama_ortu || 'orang tua'}`}>
+        {transkrip && k.nomor_hash && (
+          <Transkrip p={{ nomor_hash: k.nomor_hash, nomor_samar: samarkanNomor(k.nomor_ortu), nama: k.nama_ortu, pesan_terakhir: '', waktu: '', status: 'Admin', kanal: 'wa', nomor: k.nomor_ortu }} />
+        )}
+      </PanelSamping>
     </div>
   );
 }

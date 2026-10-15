@@ -84,6 +84,7 @@ export function buatMock(sekarang = () => Date.now()) {
   let pengetahuan = bacaPengetahuan();
   let jamGanti = [{ id: `${waktu(t0 - 3 * JAM)}|Nadia`, waktu: waktu(t0 - 3 * JAM), nomor: '085200001302', anak: 'Nadia', program: 'Terapi Okupasi', sesi_asal: 'Rabu 10.00', jam_diminta: 'Rabu 14.00', alasan: 'bentrok jadwal sekolah', status: 'Diajukan', admin: '' }];
   const label = new Map();
+  const balasanAdmin = new Map();
   const percakapanLatih = new Map();
   const percakapan = buatPercakapan(t0, lead, eskalasi);
   const audit = [
@@ -101,8 +102,8 @@ export function buatMock(sekarang = () => Date.now()) {
   const tanganan = {
     ringkasan: ({ hari }) => ringkasan(hari, eskalasi, lead),
     lead: ({ hari = 1 }, admin) => lead.filter((l) => t0 - Date.parse(l.waktu.replace(' ', 'T')) <= hari * HARI).map(samarLead(admin)),
-    perlu_tindakan: () => ({
-      eskalasi_terbuka: eskalasi.filter((e) => e.status !== 'Selesai').map((e) => ({ ...e, nomor: samarkan(e.nomor) })),
+    perlu_tindakan: (_, admin) => ({
+      eskalasi_terbuka: eskalasi.filter((e) => e.status !== 'Selesai').map((e) => ({ ...e, kanal: 'wa', nomor: admin ? e.nomor : samarkan(e.nomor) })),
       followup_jatuh_tempo: lead.filter((l) => l.status === 'Follow-up').map((l) => ({ ...l, nomor: samarkan(l.nomor), umur_jam: 26 })),
       jam_ganti_diajukan: jamGanti.filter((j) => j.status === 'Diajukan').map((j) => ({ ...j, nomor: samarkan(j.nomor) })),
     }),
@@ -117,12 +118,13 @@ export function buatMock(sekarang = () => Date.now()) {
     }),
     audit: () => audit.filter((a) => !label.has(a.id_giliran)),
     konfigurasi_baca: () => konfigurasi,
-    percakapan: ({ hari = 1 }) => percakapan.filter((p) => t0 - Date.parse(p.waktu.replace(' ', 'T')) <= hari * HARI),
+    percakapan: ({ hari = 1 }, admin) => percakapan.filter((p) => t0 - Date.parse(p.waktu.replace(' ', 'T')) <= hari * HARI).map(({ nomor, ...p }) => ({ ...p, kanal: 'wa', ...(admin ? { nomor } : {}) })),
     log_sesi: ({ nomor, nomor_hash }) => {
       const digit = (v) => String(v || '').replace(/\D/g, '').replace(/^0/, '62');
       const k = klien.find((x) => x.nomor_hash === nomor_hash || (nomor && digit(x.nomor_ortu) === digit(nomor)));
       const sumber = k ? logKlien(t0, k.nomor_hash, k.nama_anak === 'Rafa') : nomor ? percakapanLatih.get(nomor) || [] : k ? logKlien(t0, nomor_hash, k.nama_anak === 'Rafa') : transkrip(t0, percakapan.find((p) => p.nomor_hash === nomor_hash) || { pesan_terakhir: '-', status: 'Bot' });
-      return sumber.map((r) => (label.has(r.id_giliran) && r.arah === 'keluar' ? { ...r, label: label.get(r.id_giliran).l, koreksi: label.get(r.id_giliran).koreksi } : r));
+      const dariAdmin = balasanAdmin.get(nomor_hash || k?.nomor_hash) || [];
+      return [...sumber, ...dariAdmin].map((r) => (label.has(r.id_giliran) && r.arah === 'keluar' ? { ...r, label: label.get(r.id_giliran).l, koreksi: label.get(r.id_giliran).koreksi } : r));
     },
     jadwal: ({ hari_ke_depan = 7 }) => {
       const batas = tanggal(t0 + hari_ke_depan * HARI);
@@ -167,7 +169,15 @@ export function buatMock(sekarang = () => Date.now()) {
     eskalasi_status: ({ id, nomor_hash, status, admin }) => {
       if (id) eskalasi = ubah(eskalasi, id, (e) => ({ ...e, status, admin, waktu_selesai: status === 'Selesai' ? waktu(sekarang()) : '' }));
       else eskalasi = [...eskalasi, { id: `${waktu(sekarang())}|${nomor_hash}`, waktu: waktu(sekarang()), nomor_hash, nomor: '', alasan: 'Diambil admin dari CRM', prioritas: 'sedang', status, admin, waktu_selesai: '', umur_menit: 0 }];
-      return { id, nomor_hash, status, admin };
+      const e = eskalasi.find((x) => (id ? x.id === id : x.nomor_hash === nomor_hash));
+      const nomorPercakapan = percakapan.find((p) => p.nomor_hash === (e?.nomor_hash || nomor_hash))?.nomor;
+      return { id, nomor_hash, status, admin, kanal: 'wa', nomor: e?.nomor || nomorPercakapan || '' };
+    },
+    // U1.15: kredensial WA belum ada di Fase 1, jadi balasan admin tercatat tapi tertunda.
+    balas_admin: ({ nomor_hash, teks, admin }) => {
+      const baris = { waktu: waktu(sekarang()), arah: 'keluar', pesan: teks, tool_dipanggil: `admin:${admin}`, id_giliran: '', status: 'tertunda: kredensial WA' };
+      balasanAdmin.set(nomor_hash, [...(balasanAdmin.get(nomor_hash) || []), baris]);
+      return { nomor_hash, waktu: baris.waktu, admin, kanal: 'wa', status: baris.status };
     },
     jam_ganti_status: ({ id, status, admin }) => {
       jamGanti = ubah(jamGanti, id, (j) => ({ ...j, status, admin }));
