@@ -172,8 +172,8 @@ export function Latih() {
               </div>
             </li>
           )}
-          {sesi.pesan.map((p) => (
-            <Gelembung key={p.id} pesan={p} terpilih={p.id === terpilih} onPilih={pilih} onLabel={beriLabel} animasi={!idAwal.has(p.id)} />
+          {sesi.pesan.map((p, i) => (
+            <Gelembung key={p.id} pesan={p} terpilih={p.id === terpilih} onPilih={pilih} onLabel={beriLabel} animasi={!idAwal.has(p.id)} pesanOrtu={sesi.pesan[i - 1]?.dari === 'ortu' ? sesi.pesan[i - 1].teks : ''} />
           ))}
           {menunggu && (
             <li className="flex flex-col gap-2" role="status" aria-label="Bot sedang membalas">

@@ -182,7 +182,7 @@ export function buatMock(sekarang = () => Date.now()) {
       const idBaru = id || `P${String(pengetahuan.length + 1).padStart(3, '0')}`;
       const baris = { id: idBaru, topik, pertanyaan_variasi, jawaban };
       pengetahuan = pengetahuan.some((p) => p.id === idBaru) ? pengetahuan.map((p) => (p.id === idBaru ? baris : p)) : [...pengetahuan, baris];
-      return { id: idBaru, hasil: id ? 'diperbarui' : 'ditambahkan' };
+      return { id: idBaru, baris: pengetahuan.findIndex((p) => p.id === idBaru) + 2, baru: !id };
     },
   };
 

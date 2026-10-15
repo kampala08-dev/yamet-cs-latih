@@ -5,6 +5,7 @@ import { Check, CheckCircle, X } from '@phosphor-icons/react';
 import { api } from '../lib/api';
 import type { Label } from '../lib/tipe';
 import { Tombol } from './Tombol';
+import { TerapkanPengetahuan } from './TerapkanPengetahuan';
 import { PEGAS } from '../lib/gerak';
 
 
@@ -13,18 +14,20 @@ interface LabelGiliranProps {
   labelAwal?: string;
   koreksiAwal?: string;
   onBerubah?: (label: Label, koreksi: string) => void;
+  // Hanya di halaman latih: koreksi bisa diterapkan ke tab Pengetahuan.
+  terapkan?: { pengetahuanDipakai: string[]; pesanOrtu: string };
 }
 
 type Simpan = 'diam' | 'menyimpan' | 'tersimpan' | 'galat';
 
-export function LabelGiliran({ idGiliran, labelAwal, koreksiAwal = '', onBerubah }: LabelGiliranProps) {
+export function LabelGiliran({ idGiliran, labelAwal, koreksiAwal = '', onBerubah, terapkan }: LabelGiliranProps) {
   const [label, setLabel] = useState<Label | ''>(labelAwal === 'Benar' || labelAwal === 'Salah' ? labelAwal : '');
   const [koreksi, setKoreksi] = useState(koreksiAwal);
   const [status, setStatus] = useState<Simpan>('diam');
   const [statusKoreksi, setStatusKoreksi] = useState<Simpan>(koreksiAwal ? 'tersimpan' : 'diam');
   const [galat, setGalat] = useState('');
 
-  async function kirim(l: Label, teksKoreksi = '') {
+  async function kirim(l: Label, teksKoreksi = ''): Promise<boolean> {
     const untukKoreksi = Boolean(teksKoreksi);
     const setS = untukKoreksi ? setStatusKoreksi : setStatus;
     setS('menyimpan');
@@ -33,10 +36,18 @@ export function LabelGiliran({ idGiliran, labelAwal, koreksiAwal = '', onBerubah
       await api.aksi('label', { id_giliran: idGiliran, label: l, koreksi: teksKoreksi });
       setS('tersimpan');
       onBerubah?.(l, teksKoreksi);
+      return true;
     } catch (e) {
       setS('galat');
       setGalat(e instanceof Error ? e.message : String(e));
+      return false;
     }
+  }
+
+  // Terapkan ke Pengetahuan selalu menulis label Salah + koreksi ke Log dulu (bila belum tersimpan).
+  async function simpanLogDulu() {
+    if (statusKoreksi === 'tersimpan') return true;
+    return kirim('Salah', koreksi.trim());
   }
 
   function pilih(l: Label) {
@@ -101,7 +112,11 @@ export function LabelGiliran({ idGiliran, labelAwal, koreksiAwal = '', onBerubah
               {statusKoreksi === 'tersimpan' && (
                 <span className="inline-flex items-center gap-1 text-[13px] text-lumut-700"><CheckCircle size={20} /> Koreksi tersimpan</span>
               )}
+              {terapkan && (
+                <TerapkanPengetahuan koreksi={koreksi} pengetahuanDipakai={terapkan.pengetahuanDipakai} pesanOrtu={terapkan.pesanOrtu} simpanLog={simpanLogDulu} />
+              )}
             </div>
+            {statusKoreksi === 'galat' && <p className="text-[13px] text-bata-700">{galat}</p>}
           </motion.div>
         )}
       </AnimatePresence>

@@ -35,9 +35,10 @@ interface GelembungProps {
   onPilih: (id: string) => void;
   onLabel: (id: string, l: Label, koreksi: string) => void;
   animasi: boolean;
+  pesanOrtu?: string;
 }
 
-export const Gelembung = memo(function Gelembung({ pesan, terpilih, onPilih, onLabel, animasi }: GelembungProps) {
+export const Gelembung = memo(function Gelembung({ pesan, terpilih, onPilih, onLabel, animasi, pesanOrtu = '' }: GelembungProps) {
   // Pesan yang dipulihkan dari sessionStorage tidak dianimasikan ulang.
   const awal = animasi ? { opacity: 0, y: 8 } : false;
   if (pesan.dari === 'ortu') {
@@ -75,7 +76,7 @@ export const Gelembung = memo(function Gelembung({ pesan, terpilih, onPilih, onL
           </button>
         </div>
       )}
-      {b && <LabelGiliran idGiliran={b.id_giliran} labelAwal={pesan.label} koreksiAwal={pesan.koreksi} onBerubah={(l, k) => onLabel(pesan.id, l, k)} />}
+      {b && <LabelGiliran idGiliran={b.id_giliran} labelAwal={pesan.label} koreksiAwal={pesan.koreksi} onBerubah={(l, k) => onLabel(pesan.id, l, k)} terapkan={{ pengetahuanDipakai: b.pengetahuan_dipakai, pesanOrtu }} />}
     </motion.li>
   );
 });

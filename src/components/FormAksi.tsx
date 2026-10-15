@@ -28,7 +28,7 @@ interface FormAksiProps {
   boleh: boolean;
   tambahan?: Record<string, string>;
   pesanBerhasil?: string;
-  onBerhasil?: (isi: Record<string, string>) => void;
+  onBerhasil?: (isi: Record<string, string>, data: unknown) => void;
   kosongkanSetelah?: boolean;
 }
 
@@ -55,9 +55,9 @@ export function FormAksi({ aksi, kolom, awal, label, boleh, tambahan = {}, pesan
     setStatus('menyimpan');
     const bersih = Object.fromEntries(Object.entries(isi).map(([k, v]) => [k, v.trim()]));
     try {
-      await api.aksi(aksi, { ...bersih, ...tambahan });
+      const data = await api.aksi(aksi, { ...bersih, ...tambahan });
       setStatus('ok');
-      onBerhasil?.(bersih);
+      onBerhasil?.(bersih, data);
       if (kosongkanSetelah) setIsi(awal);
     } catch (er) {
       setStatus('diam');
