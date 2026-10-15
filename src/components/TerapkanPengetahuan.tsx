@@ -26,7 +26,7 @@ type Tahap =
   | { jenis: 'menulis'; baris: BarisPengetahuan }
   | { jenis: 'selesai'; id: string };
 
-const PESAN_SELESAI = (id: string) => `Diterapkan ke ${id}, bot memuat ulang maksimal 5 menit.`;
+const PESAN_SELESAI = (id: string) => `Diterapkan ke ${id}, bot memuat ulang maksimal 1 menit.`;
 
 export function TerapkanPengetahuan({ koreksi, pengetahuanDipakai, pesanOrtu, simpanLog }: TerapkanProps) {
   const { sesi } = useSesi();

@@ -129,5 +129,5 @@ export const KOLOM_PENGETAHUAN: Kolom[] = [
   { nama: 'topik', label: 'Topik', jenis: 'pilih', pilihan: TOPIK_PENGETAHUAN },
   { nama: 'id', label: 'ID', maks: 8, pola: /^P\d{3,4}$/, pesanPola: 'Bentuk P001. Kosongkan untuk baris baru.', bantu: 'Kosong = baris baru, id dibuat n8n.' },
   { nama: 'pertanyaan_variasi', label: 'Variasi pertanyaan', jenis: 'area', maks: 1000, bantu: 'Pisahkan dengan |' },
-  { nama: 'jawaban', label: 'Jawaban', jenis: 'area', wajib: true, maks: 2000, bantu: 'Bot memuat ulang Pengetahuan paling lambat 5 menit.' },
+  { nama: 'jawaban', label: 'Jawaban', jenis: 'area', wajib: true, maks: 2000, bantu: 'Bot memuat ulang Pengetahuan paling lambat 1 menit.' },
 ];

@@ -48,7 +48,7 @@ function Pengetahuan() {
   return (
     <Ubin
       judul="Pengetahuan"
-      keterangan={data ? `${semua.length} baris. Bot memuat ulang paling lambat 5 menit setelah disimpan.` : undefined}
+      keterangan={data ? `${semua.length} baris. Bot memuat ulang paling lambat 1 menit setelah disimpan.` : undefined}
       className="col-span-12 xl:col-span-7"
       aksi={<Tombol ukuran="kecil" varian="utama" onClick={() => setSunting('baru')} ikon={<Plus size={20} />}>Tambah</Tombol>}
     >

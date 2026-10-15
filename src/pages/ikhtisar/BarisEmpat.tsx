@@ -73,7 +73,7 @@ function UbinTakTerjawab({ hari }: { hari: number }) {
             awal={{ topik: 'umum', id: '', pertanyaan_variasi: pesan, jawaban: '' }}
             label="Simpan ke Pengetahuan"
             boleh={sesi.peran === 'admin'}
-            pesanBerhasil="Tersimpan. Bot memakai paling lambat 5 menit."
+            pesanBerhasil="Tersimpan. Bot memakai paling lambat 1 menit."
           />
         )}
       </PanelSamping>
