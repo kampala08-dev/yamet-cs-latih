@@ -1,0 +1,71 @@
+# Halaman latih + CRM chatbot CS YAMET (project Docker "yamet-cs-latih" di VPS Hostinger).
+# Docker Manager Hostinger tidak menjalankan `build:`, jadi pola sama dengan yamet-dempo:
+#   builder -> clone repo GitHub, npm ci + build, salin hasil ke volume `app`, lalu selesai
+#   web     -> node:20 menjalankan server dari volume `app` (mulai SETELAH builder sukses)
+# Ambil kode terbaru dari GitHub = Restart project.
+# Nilai rahasia datang dari .env / Environment Docker Manager, tidak pernah ditulis di sini.
+# Tanda $ untuk shell ditulis $$ karena compose menafsirkan $ sebagai variabel.
+
+services:
+  builder:
+    image: node:20-bookworm
+    restart: "no"
+    environment:
+      CS_REPO_URL: ${CS_REPO_URL:?isi CS_REPO_URL}
+      CS_REPO_CABANG: ${CS_REPO_CABANG:-main}
+      CS_REPO_FOLDER: ${CS_REPO_FOLDER:-.}
+    command:
+      - bash
+      - -euc
+      - |
+        rm -rf /tmp/repo
+        git clone --depth 1 --branch "$$CS_REPO_CABANG" "$$CS_REPO_URL" /tmp/repo
+        cd "/tmp/repo/$$CS_REPO_FOLDER"
+        npm ci --no-audit --no-fund
+        npm run build
+        npm prune --omit=dev
+        rm -rf /app/baru && mkdir -p /app/baru
+        cp -r package.json dist server node_modules /app/baru/
+        rm -f /app/baru/server/*.test.mjs
+        rm -rf /app/lama && { [ -d /app/kini ] && mv /app/kini /app/lama || true; }
+        mv /app/baru /app/kini
+        echo "Build selesai: $$(git -C /tmp/repo log -1 --format='%h %s')"
+    volumes:
+      - app:/app
+      - npm_cache:/root/.npm
+
+  web:
+    image: node:20-bookworm-slim
+    restart: unless-stopped
+    user: "node"
+    working_dir: /app/kini
+    depends_on:
+      builder:
+        condition: service_completed_successfully
+    command: ["node", "server/index.mjs"]
+    environment:
+      NODE_ENV: production
+      PORT: "8080"
+      CS_SANDI_ADMIN: ${CS_SANDI_ADMIN:?isi CS_SANDI_ADMIN}
+      CS_SANDI_LATIH: ${CS_SANDI_LATIH:-}
+      CS_N8N_BASE: ${CS_N8N_BASE:?isi CS_N8N_BASE}
+      CS_LATIH_SECRET: ${CS_LATIH_SECRET:?isi CS_LATIH_SECRET}
+      CS_N8N_TIMEOUT_MS: ${CS_N8N_TIMEOUT_MS:-90000}
+      CS_MOCK: ${CS_MOCK:-0}
+    volumes:
+      - app:/app:ro
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/api/sehat').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.yamet-cs-latih.rule=Host(`${CS_DOMAIN:?isi CS_DOMAIN}`)"
+      - "traefik.http.routers.yamet-cs-latih.entrypoints=websecure"
+      - "traefik.http.routers.yamet-cs-latih.tls.certresolver=letsencrypt"
+      - "traefik.http.services.yamet-cs-latih.loadbalancer.server.port=8080"
+
+volumes:
+  app:
+  npm_cache:

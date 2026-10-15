@@ -1,0 +1,590 @@
+[
+ {
+  "id": "P001",
+  "topik": "layanan",
+  "pertanyaan_variasi": "apa aja layanan terapi di yamet | layanannya ada apa saja kak | jenis terapi yg tersedia apa | ada terapi apa aja di sana",
+  "jawaban": "Layanan YAMET ada enam, Ayah/Bunda: Terapi Wicara, Terapi Sensori Integrasi, Terapi Okupasi, Terapi Perilaku, Terapi Pedagogik, dan Fisioterapi. Semuanya disusun individual sesuai kebutuhan tiap anak."
+ },
+ {
+  "id": "P002",
+  "topik": "layanan",
+  "pertanyaan_variasi": "terapi wicara itu ngapain aja | anak saya mau ikut terapi wicara, isinya apa | wicara itu belajar ngomong ya kak | terapi wicara ada artikulasi gak",
+  "jawaban": "Terapi Wicara di YAMET mencakup pemahaman dan ekspresi bahasa, artikulasi, pragmatik, dan oral motor training, Ayah/Bunda. Programnya disesuaikan dengan kebutuhan masing-masing anak."
+ },
+ {
+  "id": "P003",
+  "topik": "layanan",
+  "pertanyaan_variasi": "sensori integrasi itu apa | bedanya SI sama terapi lain apa kak | terapi SI buat apa | anak sensitif suara sama sentuhan masuk terapi apa",
+  "jawaban": "Terapi Sensori Integrasi mencakup regulasi sensori, fokus atau atensi, dan sensory play, Ayah/Bunda. Kecocokannya untuk anak ditentukan setelah observasi dan asesmen oleh tim kami."
+ },
+ {
+  "id": "P004",
+  "topik": "layanan",
+  "pertanyaan_variasi": "terapi okupasi itu apa | okupasi bisa bantu anak nulis gak | OT itu apa kak | anak belum bisa makan sendiri sama pake baju sendiri masuk okupasi?",
+  "jawaban": "Terapi Okupasi di YAMET melatih motorik halus dan kasar serta kemandirian atau ADL seperti makan, menulis, dan berpakaian, Ayah/Bunda. Jenis terapi yang paling sesuai ditentukan setelah observasi dan asesmen."
+ },
+ {
+  "id": "P005",
+  "topik": "layanan",
+  "pertanyaan_variasi": "terapi perilaku itu apa | anak susah diatur cocoknya terapi apa | terapi perilaku ngajarin apa aja | ada behavior therapy gak",
+  "jawaban": "Terapi Perilaku mencakup manajemen perilaku, kepatuhan instruksi, pretend play, dan keterampilan sosial, Ayah/Bunda. Untuk menentukan terapi yang sesuai, tim kami melakukan observasi dan asesmen terlebih dahulu."
+ },
+ {
+  "id": "P006",
+  "topik": "layanan",
+  "pertanyaan_variasi": "terapi pedagogik itu apa | anak susah baca tulis hitung ada terapinya gak | ada remedial belajar | fungsi eksekutif itu apa kak",
+  "jawaban": "Terapi Pedagogik mencakup remedial, literasi dan numerasi, strategi belajar, serta fungsi eksekutif, Ayah/Bunda."
+ },
+ {
+  "id": "P007",
+  "topik": "layanan",
+  "pertanyaan_variasi": "fisioterapi anak itu apa | anak telat jalan masuk fisio gak | fisio bisa buat postur | fisioterapi untuk keseimbangan ada",
+  "jawaban": "Fisioterapi di YAMET mencakup kekuatan dan kontrol otot, postur, serta keseimbangan dan koordinasi, Ayah/Bunda."
+ },
+ {
+  "id": "P008",
+  "topik": "layanan",
+  "pertanyaan_variasi": "anak saya belum bisa ngomong, bisa diterapi di sana gak | anak telat bicara ditangani gak | speech delay ada terapinya | anak 3 tahun belum ngomong idak pacak diterapi kah",
+  "jawaban": "Untuk kebutuhan terkait bicara, bahasa, dan komunikasi, tersedia Terapi Wicara, Ayah/Bunda. Apakah terapi ini yang paling sesuai akan dilihat lewat observasi dan asesmen awal, bukan dari chat ini."
+ },
+ {
+  "id": "P009",
+  "topik": "layanan",
+  "pertanyaan_variasi": "anak autis bisa terapi di yamet gak | menerima anak ASD gak | ada terapi buat anak autis | anak spektrum autis ditangani?",
+  "jawaban": "Situs kami menyebut Terapi Perilaku dan Terapi Sensori Integrasi sebagai bagian dari intervensi dini untuk anak dengan ASD, Ayah/Bunda. Kondisi dan program untuk tiap anak ditentukan lewat observasi dan asesmen, bukan lewat chat ini."
+ },
+ {
+  "id": "P010",
+  "topik": "layanan",
+  "pertanyaan_variasi": "anak susah fokus gampang teralih masuk terapi apa | anak hiperaktif ada terapinya gak | anak sering ngamuk bisa dibantu | gimana kalo anak susah diam",
+  "jawaban": "Untuk kesulitan fokus dan perilaku, situs kami menyebut pendekatan perilaku, sensori integrasi (fokus atau atensi), dan dukungan psikologis, Ayah/Bunda. Terapi yang tepat ditentukan setelah observasi dan asesmen oleh tim kami."
+ },
+ {
+  "id": "P011",
+  "topik": "layanan",
+  "pertanyaan_variasi": "anak susah pegang pensil atau gunting | jalan anak kurang seimbang | motoriknya lambat masuk terapi apa | anak belum bisa lompat",
+  "jawaban": "Untuk gerakan halus seperti menggenggam, menulis, dan menggunting tersedia Terapi Okupasi, sedangkan untuk gerakan besar seperti keseimbangan dan koordinasi tersedia Fisioterapi, Ayah/Bunda. Pilihan yang pas ditentukan setelah observasi dan asesmen."
+ },
+ {
+  "id": "P012",
+  "topik": "layanan",
+  "pertanyaan_variasi": "bisa ikut lebih dari 1 terapi gak | anak saya mau wicara sama okupasi sekaligus bisa | boleh ambil beberapa terapi | bisa digabung terapinya",
+  "jawaban": "Program disusun individual sesuai kebutuhan tiap anak, jadi jenis dan jumlah terapi ditentukan setelah observasi dan asesmen awal, Ayah/Bunda. Untuk kombinasi tertentu, admin kami yang akan membantu menjelaskan."
+ },
+ {
+  "id": "P013",
+  "topik": "layanan",
+  "pertanyaan_variasi": "gimana tau anak butuh terapi apa | anak saya cocoknya terapi yang mana | bingung pilih terapi | cakmano nentuin terapi yg cocok",
+  "jawaban": "Pilihan terapi ditentukan lewat observasi anak oleh tim terapis, lalu asesmen awal, Ayah/Bunda. Dari hasil itu program individual disusun untuk anak."
+ },
+ {
+  "id": "P014",
+  "topik": "layanan",
+  "pertanyaan_variasi": "ada psikolog anak gak | bisa konsultasi ke psikolog | di yamet ada psikolog | mau tes psikologi atau psikotes anak",
+  "jawaban": "Ada, Ayah/Bunda. YAMET memiliki psikolog, yaitu Tri Gunadi, AMd. OT, S.Ked, S.Psi, CH, CHt, CMT.NNLP, AIFO-FIT, Psikolog. Jadwal dan detail konsultasi diatur oleh admin kami."
+ },
+ {
+  "id": "P015",
+  "topik": "layanan",
+  "pertanyaan_variasi": "siapa nama psikolognya | psikolog yamet namanya siapa | psikolognya lulusan apa | dokter atau psikolog yang periksa",
+  "jawaban": "Psikolog di YAMET adalah Tri Gunadi, AMd. OT, S.Ked, S.Psi, CH, CHt, CMT.NNLP, AIFO-FIT, Psikolog, Ayah/Bunda. Untuk jadwal dan detail konsultasinya, admin kami yang akan membantu."
+ },
+ {
+  "id": "P016",
+  "topik": "layanan",
+  "pertanyaan_variasi": "bisa terapi online gak | ada home visit terapi ke rumah | terapinya bisa dateng ke rumah | bisa lewat zoom",
+  "jawaban": "Saat ini YAMET belum menyediakan terapi online, Ayah/Bunda. Semua sesi dilakukan langsung di klinik Jl. Dempo Luar No.558 agar terapis dapat mendampingi anak secara penuh."
+ },
+ {
+  "id": "P017",
+  "topik": "layanan",
+  "pertanyaan_variasi": "pakai metode apa terapinya | ada metode ABA gak | metodenya apa aja | terapinya berbasis apa",
+  "jawaban": "YAMET memakai pendekatan multidisiplin ilmu yang disesuaikan dengan kebutuhan spesifik tiap anak usia 0 sampai 14 tahun, Ayah/Bunda. Program disusun setelah observasi dan asesmen."
+ },
+ {
+  "id": "P018",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "alamat yamet dimana | lokasinya di mana kak | alamat lengkapnya | yamet dimano alamatnya",
+  "jawaban": "YAMET Palembang Dempo berlokasi di Jl. Dempo Luar No.558, 17 Ilir, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan 30125, Ayah/Bunda."
+ },
+ {
+  "id": "P019",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "share lokasi dong | ada link google maps gak | shareloc kak | minta pin lokasinya",
+  "jawaban": "Ini tautan Google Maps lokasi kami, Ayah/Bunda: https://maps.app.goo.gl/Dw8MyZpjp7bq1xmG9"
+ },
+ {
+  "id": "P020",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "jam buka jam berapa | buka sampe jam brp | jadwal buka klinik | jam operasionalnya kapan",
+  "jawaban": "Jam operasional kami: Senin sampai Jumat pukul 08.00 sampai 18.00 dan Sabtu pukul 08.00 sampai 15.00, Ayah/Bunda. Hari Minggu kami tutup."
+ },
+ {
+  "id": "P021",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "sabtu buka gak | hari sabtu buka sampai jam berapa | weekend buka gak | sabtu ado terapi?",
+  "jawaban": "Kami buka pada hari Sabtu pukul 08.00 sampai 15.00, Ayah/Bunda."
+ },
+ {
+  "id": "P022",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "minggu buka? | hari minggu ada terapi gak | minggu libur ya | dak buka minggu ye",
+  "jawaban": "Hari Minggu kami tutup, Ayah/Bunda. Kami buka kembali hari Senin pukul 08.00."
+ },
+ {
+  "id": "P023",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "tanggal merah buka gak | lebaran libur berapa hari | libur nasional tutup gak | natal tahun baru buka",
+  "jawaban": "Pada tanggal merah atau libur nasional YAMET tutup, Ayah/Bunda. Jam layanan Senin sampai Jumat 08.00 sampai 18.00 dan Sabtu 08.00 sampai 15.00."
+ },
+ {
+  "id": "P024",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "ada parkiran gak | parkir mobil muat | parkir motor aman gak | tempat parkirnya luas",
+  "jawaban": "Ada area parkir di klinik, Ayah/Bunda."
+ },
+ {
+  "id": "P025",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "patokan lokasinya apa | deket apa ya | masuk gang atau pinggir jalan | lewat mana kalo dari jakabaring",
+  "jawaban": "Lokasinya di Jl. Dempo Luar No.558, tepat di belakang Puskesmas Dempo atau di depan Kopi Riau, Ayah/Bunda. Tautan Maps: https://maps.app.goo.gl/Dw8MyZpjp7bq1xmG9"
+ },
+ {
+  "id": "P026",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "ada cabang lain gak | yamet cabang mana aja | selain dempo ada di mana | cabang kota lain ada",
+  "jawaban": "YAMET Palembang Dempo tidak membuka cabang lain, Ayah/Bunda. Semua layanan hanya di Jl. Dempo Luar No.558."
+ },
+ {
+  "id": "P027",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "nomor admin berapa | minta no wa admin | kontak yamet | nomor telp yamet ada gak",
+  "jawaban": "Admin kami dapat dihubungi lewat WhatsApp di +62 812-8808-0896, Ayah/Bunda. Kami juga ada di Instagram @yametpalembang."
+ },
+ {
+  "id": "P028",
+  "topik": "lokasi_jam",
+  "pertanyaan_variasi": "ig yamet apa | instagramnya apa kak | akun medsos yamet | ada tiktok atau ig",
+  "jawaban": "Instagram kami adalah @yametpalembang (https://instagram.com/yametpalembang), Ayah/Bunda."
+ },
+ {
+  "id": "P029",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "gimana cara daftar | mau daftarin anak caranya gimana | cakmano daftar terapi | prosedur pendaftaran",
+  "jawaban": "Caranya mudah, Ayah/Bunda: hubungi WhatsApp kami untuk konsultasi, lalu tim YAMET akan membantu menjadwalkan observasi dan asesmen awal sesuai ketersediaan Ayah/Bunda dan menjelaskan langkah berikutnya."
+ },
+ {
+  "id": "P030",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "ada form pendaftaran online gak | daftar lewat website bisa | isi formulir dimana | form konsultasi ada gak",
+  "jawaban": "Di situs kami ada form 'Konsultasi - Tinggalkan Pesan' berisi nama orang tua, nomor WhatsApp, usia anak (opsional), serta keluhan atau kebutuhan, Ayah/Bunda. Setelah dikirim, tim kami akan menghubungi lewat WhatsApp."
+ },
+ {
+  "id": "P031",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "perlu surat rujukan dokter gak | harus dari dokter dulu | wajib rujukan gak | gak punya rujukan boleh daftar?",
+  "jawaban": "Rujukan dokter tidak wajib, Ayah/Bunda. Ayah/Bunda dapat langsung datang untuk konsultasi awal, dan bila sudah ada hasil pemeriksaan dokter spesialis anak atau psikiater, kami jadikan referensi tambahan."
+ },
+ {
+  "id": "P032",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "umur berapa bisa mulai terapi | bayi 6 bulan bisa gak | anak 12 tahun masih bisa | batas usia terapi berapa",
+  "jawaban": "YAMET melayani anak usia 0 sampai 15 tahun, Ayah/Bunda, dan terapi dapat dimulai sejak dini."
+ },
+ {
+  "id": "P033",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "anak saya 17 tahun bisa gak | remaja bisa terapi | dewasa ada terapinya | umur 16 masih diterima",
+  "jawaban": "Layanan kami untuk anak usia 0 sampai 15 tahun, Ayah/Bunda. Untuk usia di atas itu, silakan sampaikan kebutuhannya agar admin kami bantu cek."
+ },
+ {
+  "id": "P034",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "bawa apa waktu pertama datang | dokumen apa yang disiapkan | perlu bawa hasil lab | syaratnya apa aja",
+  "jawaban": "Hasil pemeriksaan dokter spesialis anak atau psikiater, bila sudah ada, boleh dibawa sebagai referensi tambahan, Ayah/Bunda. Rujukan dokter sendiri tidak wajib."
+ },
+ {
+  "id": "P035",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "ada waiting list gak | antri berapa lama | kapan bisa mulai terapi | slot masih kosong gak",
+  "jawaban": "Ada, Ayah/Bunda. Setelah observasi, jadwal asesmen biasanya menunggu 1 sampai 4 minggu tergantung antrean. Admin akan memberi tahu perkiraan waktunya."
+ },
+ {
+  "id": "P036",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "bisa pilih terapisnya gak | bisa pilih jam terapi | request terapis tertentu | jadwal bisa sore gak",
+  "jawaban": "Boleh, Ayah/Bunda. Untuk pertama kali, tim observer memilihkan terapis yang paling sesuai dengan kebutuhan anak. Setelah itu preferensi bisa disampaikan ke admin."
+ },
+ {
+  "id": "P037",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "udah isi form kapan dihubungi | kok belum dihubungi | berapa lama dibales | form udah dikirim tapi belum ada kabar",
+  "jawaban": "Setelah form diterima, tim YAMET akan menghubungi Ayah/Bunda lewat WhatsApp. Jika belum ada kabar, saya teruskan ke admin agar dicek."
+ },
+ {
+  "id": "P038",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "bisa daftar lewat chat ini gak | daftar di wa aja ya | sekalian daftar sekarang bisa | mau konsultasi dulu lewat wa",
+  "jawaban": "Bisa, Ayah/Bunda. Silakan sampaikan nama Ayah/Bunda, usia anak, dan kebutuhan atau hal yang ingin dikonsultasikan, lalu tim YAMET akan membantu menjadwalkan observasi dan asesmen awal."
+ },
+ {
+  "id": "P039",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "boleh didaftarin pake nama saudara | nenek yang daftarin boleh gak | pengasuh yang antar boleh | yang daftar harus orang tua kandung",
+  "jawaban": "Boleh, Ayah/Bunda. Pendaftaran bisa atas nama saudara atau wali yang mendampingi anak."
+ },
+ {
+  "id": "P040",
+  "topik": "pendaftaran",
+  "pertanyaan_variasi": "anak udah terapi di tempat lain bisa pindah | bawa hasil terapi lama | lanjutan dari klinik lain bisa | pindahan dari klinik lain gimana",
+  "jawaban": "Bisa dikonsultasikan, Ayah/Bunda. Hasil pemeriksaan dokter spesialis anak atau psikiater yang sudah ada dapat menjadi referensi tambahan, dan program di YAMET tetap disusun lewat observasi dan asesmen awal."
+ },
+ {
+  "id": "P041",
+  "topik": "biaya",
+  "pertanyaan_variasi": "berapa biaya observasi dan asesmen | biaya observasi awal brp kak | tarif asesmen berapa | observasi gratis gak",
+  "jawaban": "Biaya Observasi dan Assessment adalah Rp 850.000 untuk satu paket, Ayah/Bunda, dan dibayar sekali."
+ },
+ {
+  "id": "P042",
+  "topik": "biaya",
+  "pertanyaan_variasi": "observasi sama asesmen bayarnya terpisah gak | bayar dua kali atau sekali | 850 ribu itu udah semua | biaya sekali bayar apa aja",
+  "jawaban": "Observasi dan Assessment dihitung sebagai satu paket dengan biaya Rp 850.000 yang dibayar sekali, Ayah/Bunda."
+ },
+ {
+  "id": "P043",
+  "topik": "biaya",
+  "pertanyaan_variasi": "biaya terapi per sesi berapa | tarif terapi sekali datang | harga terapi lanjutan brp | setelah asesmen bayarnya berapa",
+  "jawaban": "Untuk biaya terapi lanjutan, admin kami yang akan menginformasikan, Ayah/Bunda."
+ },
+ {
+  "id": "P044",
+  "topik": "biaya",
+  "pertanyaan_variasi": "ada paket bulanan gak | harga paket sebulan berapa | total biaya terapi sebulan | ada biaya lain selain observasi",
+  "jawaban": "Biaya terapi lanjutan, termasuk paket, akan diinformasikan oleh admin kami, Ayah/Bunda."
+ },
+ {
+  "id": "P045",
+  "topik": "biaya",
+  "pertanyaan_variasi": "minta daftar harga lengkap | ada pricelist gak | kirim brosur biaya dong | biaya konsultasi psikolog berapa",
+  "jawaban": "Selain biaya Observasi dan Assessment Rp 850.000 (satu paket, dibayar sekali), rincian biaya lainnya akan diinformasikan oleh admin kami, Ayah/Bunda."
+ },
+ {
+  "id": "P046",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "observasi itu apa | kok anak diobservasi dulu | tahap observasi ngapain aja | observasi awal itu gimana",
+  "jawaban": "Observasi adalah langkah pertama, Ayah/Bunda: anak diamati langsung oleh tim terapis untuk memahami kondisi dan kebutuhannya."
+ },
+ {
+  "id": "P047",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "asesmen awal itu apa | assessment itu apa sih | asesmen buat apa | apa itu asesmen",
+  "jawaban": "Asesmen awal adalah asesmen mendalam oleh terapis dan psikolog yang menjadi dasar penyusunan program terapi anak, Ayah/Bunda."
+ },
+ {
+  "id": "P048",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "bedanya observasi sama asesmen apa | observasi dan asesmen sama aja gak | urutannya mana duluan | mana dulu observasi atau asesmen",
+  "jawaban": "Urutannya observasi anak dulu, lalu asesmen awal yang lebih mendalam sebagai dasar menyusun program individual, Ayah/Bunda."
+ },
+ {
+  "id": "P049",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "observasi dilakukan siapa | yang periksa terapis atau dokter | siapa yang observasi anak saya | observasinya sama siapa",
+  "jawaban": "Observasi dilakukan langsung oleh tim terapis YAMET, Ayah/Bunda."
+ },
+ {
+  "id": "P050",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "observasi berapa lama | asesmen makan waktu berapa jam | lama sesi pertama | observasi sekali datang aja",
+  "jawaban": "Observasi berlangsung sekitar 60 sampai 90 menit, Ayah/Bunda."
+ },
+ {
+  "id": "P051",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "orang tua ikut masuk gak pas observasi | anak ditinggal bisa | harus ditemani gak | boleh nunggu di dalam",
+  "jawaban": "Selama observasi anak bersama tim observer, Ayah/Bunda menunggu di luar ruangan. Setelah selesai, Ayah/Bunda dipersilakan masuk untuk menerima laporan hasilnya."
+ },
+ {
+  "id": "P052",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "hasil asesmen kapan keluar | dapat laporan tertulis gak | hasil observasi diberitahu gimana | hasil asesmen dikasih berupa apa",
+  "jawaban": "Hasil asesmen disampaikan langsung pada saat sesi asesmen, Ayah/Bunda."
+ },
+ {
+  "id": "P053",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "habis asesmen langkah selanjutnya apa | program terapinya kapan dibuat | kapan program anak saya jadi | RPT kapan selesai",
+  "jawaban": "Setelah asesmen, program terapi individual disusun berdasarkan hasilnya, Ayah/Bunda. Detail waktunya akan diinformasikan admin."
+ },
+ {
+  "id": "P054",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "RPT itu apa | rencana program terapi ya | program terapi anak saya mana | apa itu RPT dan lembar analisa",
+  "jawaban": "RPT adalah Rancangan Program Terapi, yaitu program individual untuk setiap anak yang disusun dari hasil analisis kondisi dan kebutuhan anak, Ayah/Bunda."
+ },
+ {
+  "id": "P055",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "seminggu berapa kali terapi | frekuensi terapinya berapa | berapa sesi sebulan | jadwalnya tiap hari ya",
+  "jawaban": "Frekuensi sesi ditentukan berdasarkan kebutuhan anak setelah observasi dan asesmen awal, Ayah/Bunda."
+ },
+ {
+  "id": "P056",
+  "topik": "observasi_asesmen",
+  "pertanyaan_variasi": "re-evaluasi itu apa | berapa bulan sekali dievaluasi | kapan anak dievaluasi ulang | evaluasi perkembangan kapan jadwalnya",
+  "jawaban": "Re-evaluasi adalah penilaian ulang perkembangan anak untuk menyesuaikan program terapi, Ayah/Bunda. Dilakukan minimal 6 bulan sekali."
+ },
+ {
+  "id": "P057",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "satu sesi berapa menit | lamanya terapi sekali datang | durasi terapi berapa lama | sesinya 1 jam ya",
+  "jawaban": "Satu sesi 60 menit, Ayah/Bunda: 45 menit terapi bersama anak, 5 menit pencatatan, dan 10 menit laporan singkat kepada orang tua."
+ },
+ {
+  "id": "P058",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "dikasih laporan abis terapi gak | terapis ngasih info perkembangan | ada laporan ke orang tua tiap sesi | ada PR buat di rumah gak",
+  "jawaban": "Ada, Ayah/Bunda: 10 menit terakhir sesi dipakai terapis untuk menyampaikan progres, aktivitas hari itu, dan PR untuk di rumah, serta memberi kesempatan bertanya."
+ },
+ {
+  "id": "P059",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "anak telat 5 menit gimana | kalo telat dikit masih bisa masuk | terlambat sedikit gapapa gak | anak nyampe telat dikit",
+  "jawaban": "Untuk aturan keterlambatan, admin kami akan menginformasikan, Ayah/Bunda. Usahakan datang beberapa menit sebelum jam sesi agar waktu terapi anak utuh."
+ },
+ {
+  "id": "P060",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "anak telat 15 menit gimana | telat lebih dari 10 menit apa akibatnya | kalo telat lama laporan hilang gak | telat banyak sesinya dikurangi gak",
+  "jawaban": "Untuk aturan keterlambatan, admin kami akan menginformasikan, Ayah/Bunda."
+ },
+ {
+  "id": "P061",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "anak sakit mau izin gimana | cara izin tidak hadir | besok anak gak bisa datang | lapor izin ke siapa",
+  "jawaban": "Bila anak sakit, Ayah/Bunda cukup lapor ke admin paling lambat 1 jam sebelum jam sesi. Saya bisa teruskan ke admin sekarang juga."
+ },
+ {
+  "id": "P062",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "bisa diganti jam lain kalau izin | jam ganti gimana aturannya | sesi yang ketinggalan diganti gak | ada ganti sesi kalo anak sakit",
+  "jawaban": "Boleh, Ayah/Bunda. Sesi yang diizinkan bisa diganti di jam lain sesuai ketersediaan jadwal. Jam ganti berlaku 90 hari sejak tanggal izin; lewat dari itu hangus."
+ },
+ {
+  "id": "P063",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "mau pindah hari terapi | ganti jam terapi tetap bisa | jadwal rutin bisa diubah | pindah ke sesi sore",
+  "jawaban": "Boleh, Ayah/Bunda, selama jadwal tersedia. Permintaannya saya teruskan ke admin untuk dicek ketersediaannya."
+ },
+ {
+  "id": "P064",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "gimana saya tau perkembangan anak | ada rapor perkembangan gak | laporan perkembangan berkala ada | progres anak dikasih tau gak",
+  "jawaban": "Ayah/Bunda mendapat update progres anak secara berkala, antara lain lewat laporan singkat di akhir setiap sesi."
+ },
+ {
+  "id": "P065",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "terapis nyatat gak tiap sesi | ada catatan harian | catatan terapi anak saya ada | dicatat gak hasil sesi",
+  "jawaban": "Setiap sesi terapi dicatat: program yang dikerjakan, respons atau capaian anak, dan catatan untuk sesi berikutnya, Ayah/Bunda."
+ },
+ {
+  "id": "P066",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "boleh nemenin di dalam ruangan | orang tua nunggu dimana | boleh liat anak terapi | ada ruang tunggu gak",
+  "jawaban": "Selama sesi, orang tua tidak masuk ke ruang terapi agar anak fokus, Ayah/Bunda. Ayah/Bunda tetap bisa memantau lewat CCTV."
+ },
+ {
+  "id": "P067",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "boleh ganti terapis gak | terapis diganti kenapa | terapis berhalangan siapa yang gantiin | anak gak cocok sama terapisnya",
+  "jawaban": "Boleh, Ayah/Bunda. Sampaikan ke admin, nanti disesuaikan dengan ketersediaan terapis dan kebutuhan anak."
+ },
+ {
+  "id": "P068",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "boleh minta video anak terapi | boleh rekam sesi anak saya | terapis bisa fotoin anak gak | minta dokumentasi sesi",
+  "jawaban": "Boleh, Ayah/Bunda, selama terapis yang bersangkutan tidak keberatan. Permintaannya bisa disampaikan lewat admin."
+ },
+ {
+  "id": "P069",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "data anak saya aman gak | privasi catatan terapi | catatan anak bisa dilihat orang lain | data anak disebar gak",
+  "jawaban": "Data anak bersifat rahasia, Ayah/Bunda: catatan terapi hanya dipakai untuk kepentingan layanan, dan progres hanya disampaikan kepada orang tua dari anak yang bersangkutan."
+ },
+ {
+  "id": "P070",
+  "topik": "klien_aktif",
+  "pertanyaan_variasi": "anak saya aman gak selama terapi | ada aturan soal kekerasan | terapis marahin anak gak | gimana keselamatan anak di sana",
+  "jawaban": "Keselamatan anak adalah prioritas, Ayah/Bunda: YAMET menerapkan aturan tanpa toleransi terhadap kekerasan dalam bentuk apa pun kepada anak. Bila ada hal yang mengkhawatirkan, silakan sampaikan agar kami teruskan ke admin."
+ },
+ {
+  "id": "P071",
+  "topik": "umum",
+  "pertanyaan_variasi": "yamet itu apa | yamet palembang ngapain | ini klinik apa | yamet itu tempat apa",
+  "jawaban": "YAMET Palembang Dempo adalah pusat tumbuh kembang anak di Palembang dengan layanan Terapi Wicara, Sensori Integrasi, Okupasi, Perilaku, Pedagogik, dan Fisioterapi, Ayah/Bunda."
+ },
+ {
+  "id": "P072",
+  "topik": "umum",
+  "pertanyaan_variasi": "assalamualaikum | halo min | selamat pagi kak | permisi mau tanya",
+  "jawaban": "Waalaikumsalam, Ayah/Bunda. Saya YAMET Customer Service, asisten otomatis YAMET Palembang Dempo; ada yang bisa saya bantu seputar layanan, jam operasional, atau pendaftaran?"
+ },
+ {
+  "id": "P073",
+  "topik": "umum",
+  "pertanyaan_variasi": "ini bot ya | siapa yang balas ini | admin asli atau robot | ini manusia atau ai",
+  "jawaban": "Saya YAMET Customer Service, asisten otomatis berbasis AI milik YAMET Palembang Dempo, Ayah/Bunda. Kalau Ayah/Bunda ingin berbicara dengan admin, katakan saja dan saya teruskan."
+ },
+ {
+  "id": "P074",
+  "topik": "umum",
+  "pertanyaan_variasi": "chat saya disimpan gak | data saya dipakai buat apa | privasi percakapan wa gimana | chat ini direkam ya",
+  "jawaban": "Percakapan dijawab oleh asisten otomatis berbasis AI pihak ketiga dan disimpan selama 90 hari dengan nomor yang disamarkan pada catatan, Ayah/Bunda. Penjelasan lengkapnya ada di halaman Privasi situs kami."
+ },
+ {
+  "id": "P075",
+  "topik": "umum",
+  "pertanyaan_variasi": "terapisnya bersertifikat gak | terapisnya lulusan apa | terapis berpengalaman gak | pengajarnya profesional?",
+  "jawaban": "Situs kami menyebut tim terapis YAMET bersertifikat dan berpengalaman, dengan pendekatan yang terstruktur dan ramah anak, Ayah/Bunda. Untuk latar belakang terapis tertentu, admin kami yang dapat membantu."
+ },
+ {
+  "id": "P076",
+  "topik": "umum",
+  "pertanyaan_variasi": "tempatnya nyaman gak | ruang terapinya gimana | ramah anak gak lokasinya | alat terapinya lengkap",
+  "jawaban": "Situs kami menyebut ruang terapi YAMET dibuat lembut, aman, dan menyenangkan agar anak betah, Ayah/Bunda."
+ },
+ {
+  "id": "P077",
+  "topik": "umum",
+  "pertanyaan_variasi": "yamet bagus gak | review nya gimana | ada testimoni orang tua | ulasan google yamet",
+  "jawaban": "Menurut situs kami, YAMET tercatat dengan rating 5,0 dari 127 ulasan Google, Ayah/Bunda. Beberapa cerita orang tua juga ada di bagian Cerita Orang Tua pada situs."
+ },
+ {
+  "id": "P078",
+  "topik": "umum",
+  "pertanyaan_variasi": "ada panduan tahapan tumbuh kembang anak | cara stimulasi anak di rumah | tips melatih anak per usia | perkembangan anak 2 tahun harusnya gimana",
+  "jawaban": "Situs kami punya bagian Tumbuh Kembang berisi gambaran tahapan per usia dan tips Stimulasi Ayah dan Bunda, Ayah/Bunda. Itu panduan umum, bukan penilaian untuk anak tertentu."
+ },
+ {
+  "id": "P079",
+  "topik": "umum",
+  "pertanyaan_variasi": "berapa lama terapi sampai anak bisa ngomong | sampai kapan harus terapi | kapan anak selesai terapi | berapa bulan biasanya",
+  "jawaban": "Perkembangan setiap anak berbeda, Ayah/Bunda, sehingga kami tidak dapat memperkirakan lamanya dari chat ini. Programnya disusun individual dan perkembangannya dilaporkan secara berkala."
+ },
+ {
+  "id": "P080",
+  "topik": "umum",
+  "pertanyaan_variasi": "ada lowongan terapis gak | bisa magang di yamet | mau kerja sama sekolah | kerja sama dengan yayasan bisa",
+  "jawaban": "Untuk informasi lowongan terapis, silakan hubungi admin kami, Ayah/Bunda."
+ },
+ {
+  "id": "P081",
+  "topik": "batas",
+  "pertanyaan_variasi": "anak saya autis bukan ya | ciri anak autis apa, anak saya begini begitu | kira-kira anak saya adhd gak | tolong nilai anak saya dari ceritanya",
+  "jawaban": "Mohon maaf Ayah/Bunda, saya tidak dapat menilai atau menentukan kondisi anak lewat chat. Penilaian dilakukan lewat observasi dan asesmen oleh tim kami, dan saya teruskan ke admin untuk membantu Ayah/Bunda menjadwalkannya."
+ },
+ {
+  "id": "P082",
+  "topik": "batas",
+  "pertanyaan_variasi": "umur 2 tahun belum ngomong normal gak | anak 3 tahun belum jalan wajar gak | ini termasuk telat bukan | anak saya terlambat gak ya",
+  "jawaban": "Setiap anak berkembang dengan ritme berbeda, Ayah/Bunda, dan saya tidak dapat menilai apakah perkembangan seorang anak sesuai usianya lewat chat. Saya teruskan ke admin agar dibantu menjadwalkan observasi dan asesmen oleh tim kami."
+ },
+ {
+  "id": "P083",
+  "topik": "batas",
+  "pertanyaan_variasi": "ini video anak saya tolong dinilai | kirim foto hasil lab bisa dibaca gak | hasil eeg anak saya artinya apa | bisa baca hasil tes dokter",
+  "jawaban": "Mohon maaf Ayah/Bunda, saya tidak dapat membaca atau menafsirkan hasil pemeriksaan maupun video anak. Silakan sampaikan kepada admin kami agar diteruskan ke tim yang berwenang."
+ },
+ {
+  "id": "P084",
+  "topik": "batas",
+  "pertanyaan_variasi": "minta surat keterangan terapi | butuh surat diagnosa buat sekolah | minta hasil asesmen tertulis | surat rekomendasi buat sekolah",
+  "jawaban": "Permintaan dokumen seperti ini perlu diproses oleh admin, Ayah/Bunda. Saya teruskan agar admin menghubungi Ayah/Bunda."
+ },
+ {
+  "id": "P085",
+  "topik": "batas",
+  "pertanyaan_variasi": "terapisnya kurang ramah | saya mau komplain terapis | terapis sering telat | terapisnya kurang sabar sama anak",
+  "jawaban": "Mohon maaf atas ketidaknyamanannya, Ayah/Bunda, dan terima kasih sudah menyampaikan. Saya teruskan keluhan ini ke admin agar ditindaklanjuti, dan admin akan menghubungi Ayah/Bunda."
+ },
+ {
+  "id": "P086",
+  "topik": "batas",
+  "pertanyaan_variasi": "anak saya dimarahin terapis | ada bekas luka di anak habis terapi | terapisnya mukul anak | anak jadi takut ke terapis",
+  "jawaban": "Terima kasih sudah menyampaikan, Ayah/Bunda, dan kami menanggapi hal ini dengan sangat serius. Saya langsung teruskan ke admin agar segera ditindaklanjuti, dan admin akan menghubungi Ayah/Bunda."
+ },
+ {
+  "id": "P087",
+  "topik": "batas",
+  "pertanyaan_variasi": "ini bukti transfernya | sudah transfer ya | rekening buat bayar mana | cara bayarnya gimana",
+  "jawaban": "Untuk pembayaran, Ayah/Bunda, saya teruskan ke admin kami karena hanya admin yang dapat memproses dan memastikan pembayaran. Mohon tidak mengirim data kartu atau nomor rekening pribadi lewat chat ini."
+ },
+ {
+  "id": "P088",
+  "topik": "batas",
+  "pertanyaan_variasi": "tagihan bulan ini berapa | saya belum bayar bulan lalu ya | minta rekap pembayaran | minta kuitansi",
+  "jawaban": "Informasi tagihan dan riwayat pembayaran hanya dapat disampaikan admin, Ayah/Bunda. Saya teruskan agar admin menghubungi Ayah/Bunda."
+ },
+ {
+  "id": "P089",
+  "topik": "batas",
+  "pertanyaan_variasi": "progres anak saya si Rafa gimana | minta laporan anak saya minggu ini | hasil terapi anak saya | lihat catatan terapi anak saya",
+  "jawaban": "Mohon maaf Ayah/Bunda, informasi tentang anak hanya dapat disampaikan langsung oleh terapis atau admin kami kepada orang tua yang bersangkutan, bukan lewat asisten otomatis ini. Saya teruskan ke admin agar Ayah/Bunda dihubungi."
+ },
+ {
+  "id": "P090",
+  "topik": "batas",
+  "pertanyaan_variasi": "jadwal anak saya besok jam berapa | kapan jadwal observasi saya | jadwal terapi anak saya hari apa | anak saya terapi jam berapa",
+  "jawaban": "Jadwal pribadi hanya dapat dicek oleh admin, Ayah/Bunda. Saya teruskan agar admin segera menghubungi Ayah/Bunda."
+ },
+ {
+  "id": "P091",
+  "topik": "batas",
+  "pertanyaan_variasi": "anak teman saya terapi di sana ya | ada anak bernama dina di sana | siapa saja anak yang terapi | anak tetangga saya ikut terapi di yamet?",
+  "jawaban": "Mohon maaf Ayah/Bunda, kami menjaga kerahasiaan data setiap anak sehingga tidak dapat memberi informasi tentang anak lain. Bila ada keperluan, silakan sampaikan agar saya teruskan ke admin."
+ },
+ {
+  "id": "P092",
+  "topik": "batas",
+  "pertanyaan_variasi": "minta nomor terapisnya | wa pribadi terapis anak saya | nomor hp dokternya | kontak langsung terapis",
+  "jawaban": "Mohon maaf Ayah/Bunda, kami tidak membagikan kontak pribadi terapis lewat chat ini. Silakan sampaikan keperluan Ayah/Bunda dan saya teruskan ke admin."
+ },
+ {
+  "id": "P093",
+  "topik": "batas",
+  "pertanyaan_variasi": "anak boleh dikasih obat apa | vitamin buat anak speech delay apa | diet gluten free bagus gak | obat penenang untuk anak",
+  "jawaban": "Mohon maaf Ayah/Bunda, saya tidak dapat memberi saran medis seperti obat, vitamin, atau diet; hal itu sebaiknya dikonsultasikan dengan dokter anak. Bila ingin membahas kebutuhan terapi, saya teruskan ke admin."
+ },
+ {
+  "id": "P094",
+  "topik": "batas",
+  "pertanyaan_variasi": "anak saya kejang | anak jatuh dan pingsan | anak sesak napas gimana | darurat anak sakit parah",
+  "jawaban": "Mohon segera bawa anak ke dokter atau IGD terdekat, Ayah/Bunda. Saya juga teruskan pesan ini ke admin kami."
+ },
+ {
+  "id": "P095",
+  "topik": "batas",
+  "pertanyaan_variasi": "mau ngomong sama admin | bisa telepon orangnya | sambungkan ke cs asli | gak mau sama bot",
+  "jawaban": "Baik, Ayah/Bunda. Saya teruskan ke admin YAMET dan nanti admin yang menghubungi Ayah/Bunda."
+ },
+ {
+  "id": "P096",
+  "topik": "batas",
+  "pertanyaan_variasi": "hapus data chat saya | saya mau data saya dihapus | hapus nomor saya dari sistem | stop simpan chat saya",
+  "jawaban": "Permintaan penghapusan data dapat diajukan lewat admin kami, Ayah/Bunda. Saya teruskan permintaan ini agar admin memprosesnya."
+ },
+ {
+  "id": "P097",
+  "topik": "batas",
+  "pertanyaan_variasi": "dijamin anak saya sembuh gak | pasti bisa ngomong kan setelah terapi | berapa persen berhasil | kalau udah terapi pasti membaik kan",
+  "jawaban": "Mohon maaf Ayah/Bunda, kami tidak dapat menjanjikan hasil karena setiap anak berbeda; yang dapat kami lakukan adalah menyusun program individual dan melaporkan progresnya secara berkala. Untuk pembahasan lebih lanjut, saya teruskan ke admin."
+ },
+ {
+  "id": "P098",
+  "topik": "batas",
+  "pertanyaan_variasi": "bisa kasih slot besok pasti | minta diskon dong | bisa dipastikan dapat jam sore | bisa nego harganya",
+  "jawaban": "Mohon maaf Ayah/Bunda, jadwal dan harga di luar yang sudah saya sampaikan tidak dapat saya pastikan lewat chat ini karena diatur langsung oleh admin. Saya teruskan agar admin membantu Ayah/Bunda."
+ }
+]

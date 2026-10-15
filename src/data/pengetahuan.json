@@ -1,0 +1,394 @@
+{
+ "P001": {
+  "topik": "layanan",
+  "contoh": "apa aja layanan terapi di yamet"
+ },
+ "P002": {
+  "topik": "layanan",
+  "contoh": "terapi wicara itu ngapain aja"
+ },
+ "P003": {
+  "topik": "layanan",
+  "contoh": "sensori integrasi itu apa"
+ },
+ "P004": {
+  "topik": "layanan",
+  "contoh": "terapi okupasi itu apa"
+ },
+ "P005": {
+  "topik": "layanan",
+  "contoh": "terapi perilaku itu apa"
+ },
+ "P006": {
+  "topik": "layanan",
+  "contoh": "terapi pedagogik itu apa"
+ },
+ "P007": {
+  "topik": "layanan",
+  "contoh": "fisioterapi anak itu apa"
+ },
+ "P008": {
+  "topik": "layanan",
+  "contoh": "anak saya belum bisa ngomong, bisa diterapi di sana gak"
+ },
+ "P009": {
+  "topik": "layanan",
+  "contoh": "anak autis bisa terapi di yamet gak"
+ },
+ "P010": {
+  "topik": "layanan",
+  "contoh": "anak susah fokus gampang teralih masuk terapi apa"
+ },
+ "P011": {
+  "topik": "layanan",
+  "contoh": "anak susah pegang pensil atau gunting"
+ },
+ "P012": {
+  "topik": "layanan",
+  "contoh": "bisa ikut lebih dari 1 terapi gak"
+ },
+ "P013": {
+  "topik": "layanan",
+  "contoh": "gimana tau anak butuh terapi apa"
+ },
+ "P014": {
+  "topik": "layanan",
+  "contoh": "ada psikolog anak gak"
+ },
+ "P015": {
+  "topik": "layanan",
+  "contoh": "siapa nama psikolognya"
+ },
+ "P016": {
+  "topik": "layanan",
+  "contoh": "bisa terapi online gak"
+ },
+ "P017": {
+  "topik": "layanan",
+  "contoh": "pakai metode apa terapinya"
+ },
+ "P018": {
+  "topik": "lokasi_jam",
+  "contoh": "alamat yamet dimana"
+ },
+ "P019": {
+  "topik": "lokasi_jam",
+  "contoh": "share lokasi dong"
+ },
+ "P020": {
+  "topik": "lokasi_jam",
+  "contoh": "jam buka jam berapa"
+ },
+ "P021": {
+  "topik": "lokasi_jam",
+  "contoh": "sabtu buka gak"
+ },
+ "P022": {
+  "topik": "lokasi_jam",
+  "contoh": "minggu buka?"
+ },
+ "P023": {
+  "topik": "lokasi_jam",
+  "contoh": "tanggal merah buka gak"
+ },
+ "P024": {
+  "topik": "lokasi_jam",
+  "contoh": "ada parkiran gak"
+ },
+ "P025": {
+  "topik": "lokasi_jam",
+  "contoh": "patokan lokasinya apa"
+ },
+ "P026": {
+  "topik": "lokasi_jam",
+  "contoh": "ada cabang lain gak"
+ },
+ "P027": {
+  "topik": "lokasi_jam",
+  "contoh": "nomor admin berapa"
+ },
+ "P028": {
+  "topik": "lokasi_jam",
+  "contoh": "ig yamet apa"
+ },
+ "P029": {
+  "topik": "pendaftaran",
+  "contoh": "gimana cara daftar"
+ },
+ "P030": {
+  "topik": "pendaftaran",
+  "contoh": "ada form pendaftaran online gak"
+ },
+ "P031": {
+  "topik": "pendaftaran",
+  "contoh": "perlu surat rujukan dokter gak"
+ },
+ "P032": {
+  "topik": "pendaftaran",
+  "contoh": "umur berapa bisa mulai terapi"
+ },
+ "P033": {
+  "topik": "pendaftaran",
+  "contoh": "anak saya 17 tahun bisa gak"
+ },
+ "P034": {
+  "topik": "pendaftaran",
+  "contoh": "bawa apa waktu pertama datang"
+ },
+ "P035": {
+  "topik": "pendaftaran",
+  "contoh": "ada waiting list gak"
+ },
+ "P036": {
+  "topik": "pendaftaran",
+  "contoh": "bisa pilih terapisnya gak"
+ },
+ "P037": {
+  "topik": "pendaftaran",
+  "contoh": "udah isi form kapan dihubungi"
+ },
+ "P038": {
+  "topik": "pendaftaran",
+  "contoh": "bisa daftar lewat chat ini gak"
+ },
+ "P039": {
+  "topik": "pendaftaran",
+  "contoh": "boleh didaftarin pake nama saudara"
+ },
+ "P040": {
+  "topik": "pendaftaran",
+  "contoh": "anak udah terapi di tempat lain bisa pindah"
+ },
+ "P041": {
+  "topik": "biaya",
+  "contoh": "berapa biaya observasi dan asesmen"
+ },
+ "P042": {
+  "topik": "biaya",
+  "contoh": "observasi sama asesmen bayarnya terpisah gak"
+ },
+ "P043": {
+  "topik": "biaya",
+  "contoh": "biaya terapi per sesi berapa"
+ },
+ "P044": {
+  "topik": "biaya",
+  "contoh": "ada paket bulanan gak"
+ },
+ "P045": {
+  "topik": "biaya",
+  "contoh": "minta daftar harga lengkap"
+ },
+ "P046": {
+  "topik": "observasi_asesmen",
+  "contoh": "observasi itu apa"
+ },
+ "P047": {
+  "topik": "observasi_asesmen",
+  "contoh": "asesmen awal itu apa"
+ },
+ "P048": {
+  "topik": "observasi_asesmen",
+  "contoh": "bedanya observasi sama asesmen apa"
+ },
+ "P049": {
+  "topik": "observasi_asesmen",
+  "contoh": "observasi dilakukan siapa"
+ },
+ "P050": {
+  "topik": "observasi_asesmen",
+  "contoh": "observasi berapa lama"
+ },
+ "P051": {
+  "topik": "observasi_asesmen",
+  "contoh": "orang tua ikut masuk gak pas observasi"
+ },
+ "P052": {
+  "topik": "observasi_asesmen",
+  "contoh": "hasil asesmen kapan keluar"
+ },
+ "P053": {
+  "topik": "observasi_asesmen",
+  "contoh": "habis asesmen langkah selanjutnya apa"
+ },
+ "P054": {
+  "topik": "observasi_asesmen",
+  "contoh": "RPT itu apa"
+ },
+ "P055": {
+  "topik": "observasi_asesmen",
+  "contoh": "seminggu berapa kali terapi"
+ },
+ "P056": {
+  "topik": "observasi_asesmen",
+  "contoh": "re-evaluasi itu apa"
+ },
+ "P057": {
+  "topik": "klien_aktif",
+  "contoh": "satu sesi berapa menit"
+ },
+ "P058": {
+  "topik": "klien_aktif",
+  "contoh": "dikasih laporan abis terapi gak"
+ },
+ "P059": {
+  "topik": "klien_aktif",
+  "contoh": "anak telat 5 menit gimana"
+ },
+ "P060": {
+  "topik": "klien_aktif",
+  "contoh": "anak telat 15 menit gimana"
+ },
+ "P061": {
+  "topik": "klien_aktif",
+  "contoh": "anak sakit mau izin gimana"
+ },
+ "P062": {
+  "topik": "klien_aktif",
+  "contoh": "bisa diganti jam lain kalau izin"
+ },
+ "P063": {
+  "topik": "klien_aktif",
+  "contoh": "mau pindah hari terapi"
+ },
+ "P064": {
+  "topik": "klien_aktif",
+  "contoh": "gimana saya tau perkembangan anak"
+ },
+ "P065": {
+  "topik": "klien_aktif",
+  "contoh": "terapis nyatat gak tiap sesi"
+ },
+ "P066": {
+  "topik": "klien_aktif",
+  "contoh": "boleh nemenin di dalam ruangan"
+ },
+ "P067": {
+  "topik": "klien_aktif",
+  "contoh": "boleh ganti terapis gak"
+ },
+ "P068": {
+  "topik": "klien_aktif",
+  "contoh": "boleh minta video anak terapi"
+ },
+ "P069": {
+  "topik": "klien_aktif",
+  "contoh": "data anak saya aman gak"
+ },
+ "P070": {
+  "topik": "klien_aktif",
+  "contoh": "anak saya aman gak selama terapi"
+ },
+ "P071": {
+  "topik": "umum",
+  "contoh": "yamet itu apa"
+ },
+ "P072": {
+  "topik": "umum",
+  "contoh": "assalamualaikum"
+ },
+ "P073": {
+  "topik": "umum",
+  "contoh": "ini bot ya"
+ },
+ "P074": {
+  "topik": "umum",
+  "contoh": "chat saya disimpan gak"
+ },
+ "P075": {
+  "topik": "umum",
+  "contoh": "terapisnya bersertifikat gak"
+ },
+ "P076": {
+  "topik": "umum",
+  "contoh": "tempatnya nyaman gak"
+ },
+ "P077": {
+  "topik": "umum",
+  "contoh": "yamet bagus gak"
+ },
+ "P078": {
+  "topik": "umum",
+  "contoh": "ada panduan tahapan tumbuh kembang anak"
+ },
+ "P079": {
+  "topik": "umum",
+  "contoh": "berapa lama terapi sampai anak bisa ngomong"
+ },
+ "P080": {
+  "topik": "umum",
+  "contoh": "ada lowongan terapis gak"
+ },
+ "P081": {
+  "topik": "batas",
+  "contoh": "anak saya autis bukan ya"
+ },
+ "P082": {
+  "topik": "batas",
+  "contoh": "umur 2 tahun belum ngomong normal gak"
+ },
+ "P083": {
+  "topik": "batas",
+  "contoh": "ini video anak saya tolong dinilai"
+ },
+ "P084": {
+  "topik": "batas",
+  "contoh": "minta surat keterangan terapi"
+ },
+ "P085": {
+  "topik": "batas",
+  "contoh": "terapisnya kurang ramah"
+ },
+ "P086": {
+  "topik": "batas",
+  "contoh": "anak saya dimarahin terapis"
+ },
+ "P087": {
+  "topik": "batas",
+  "contoh": "ini bukti transfernya"
+ },
+ "P088": {
+  "topik": "batas",
+  "contoh": "tagihan bulan ini berapa"
+ },
+ "P089": {
+  "topik": "batas",
+  "contoh": "progres anak saya si Rafa gimana"
+ },
+ "P090": {
+  "topik": "batas",
+  "contoh": "jadwal anak saya besok jam berapa"
+ },
+ "P091": {
+  "topik": "batas",
+  "contoh": "anak teman saya terapi di sana ya"
+ },
+ "P092": {
+  "topik": "batas",
+  "contoh": "minta nomor terapisnya"
+ },
+ "P093": {
+  "topik": "batas",
+  "contoh": "anak boleh dikasih obat apa"
+ },
+ "P094": {
+  "topik": "batas",
+  "contoh": "anak saya kejang"
+ },
+ "P095": {
+  "topik": "batas",
+  "contoh": "mau ngomong sama admin"
+ },
+ "P096": {
+  "topik": "batas",
+  "contoh": "hapus data chat saya"
+ },
+ "P097": {
+  "topik": "batas",
+  "contoh": "dijamin anak saya sembuh gak"
+ },
+ "P098": {
+  "topik": "batas",
+  "contoh": "bisa kasih slot besok pasti"
+ }
+}

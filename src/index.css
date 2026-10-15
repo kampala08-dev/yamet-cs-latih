@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+/* Tiga warna fungsional (desain-crm-v2.md): kuning brand = aksi utama/nav aktif/sorotan bot,
+   biru = informasi, hijau (lumut) = hasil baik. Bata hanya eskalasi terbuka & Salah, ambar hanya follow-up.
+   Teks di atas kuning selalu zinc-900. */
+@theme {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+  --color-kuning-50: hsl(45 70% 96%);
+  --color-kuning-100: hsl(45 72% 90%);
+  --color-kuning-200: hsl(45 75% 80%);
+  --color-kuning-400: hsl(44 78% 62%);
+  --color-kuning-600: hsl(41 70% 40%);
+  --color-kuning-800: hsl(38 60% 22%);
+
+  /* Biru = informasi (tautan, grafik, chip Bot). Saturasi < 80%. */
+  --color-biru-50: hsl(212 60% 96%);
+  --color-biru-100: hsl(212 58% 90%);
+  --color-biru-200: hsl(212 52% 80%);
+  --color-biru-400: hsl(212 50% 62%);
+  --color-biru-500: hsl(212 52% 50%);
+  --color-biru-600: hsl(212 55% 42%);
+  --color-biru-700: hsl(212 58% 33%);
+
+  /* Hijau (lumut) = hasil baik: hadir, Benar, jadi klien, delta naik. */
+  --color-lumut-50: hsl(95 30% 95%);
+  --color-lumut-200: hsl(95 25% 78%);
+  --color-lumut-600: hsl(95 30% 33%);
+  --color-lumut-700: hsl(95 32% 26%);
+
+  --color-bata-50: hsl(12 60% 96%);
+  --color-bata-200: hsl(12 50% 82%);
+  --color-bata-600: hsl(12 58% 42%);
+  --color-bata-700: hsl(12 60% 34%);
+
+  --color-ambar-50: hsl(36 80% 95%);
+  --color-ambar-200: hsl(36 70% 78%);
+  --color-ambar-700: hsl(32 75% 30%);
+
+  --animate-kilau: kilau 1.6s ease-in-out infinite;
+  @keyframes kilau {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-zinc-50 font-sans text-zinc-900 antialiased;
+  }
+  ::selection {
+    @apply bg-kuning-200 text-zinc-900;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-zinc-900;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
