@@ -2,9 +2,8 @@
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/geist-mono";
 
-/* Tiga warna fungsional (desain-crm-v2.md): kuning brand = aksi utama/nav aktif/sorotan bot,
-   biru = informasi, hijau (lumut) = hasil baik. Bata hanya eskalasi terbuka & Salah, ambar hanya follow-up.
-   Teks di atas kuning selalu zinc-900. */
+/* Tiga warna fungsional (desain-crm-v2.md): kuning brand = aksi utama/nav aktif/sorotan bot, biru = informasi, hijau (lumut) = hasil baik.
+   Bata hanya eskalasi terbuka & Salah, ambar hanya follow-up; teks di atas kuning selalu zinc-900. */
 @theme {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, monospace;

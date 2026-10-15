@@ -1,4 +1,4 @@
-// Transkrip satu percakapan (aksi log_sesi per nomor_hash) + Ambil alih + balas sebagai admin + label per balasan bot.
+// Transkrip satu percakapan dari aksi log_sesi (per nomor_hash).
 import { useState, type FormEvent } from 'react';
 import { HandGrabbing, PaperPlaneRight } from '@phosphor-icons/react';
 import { api } from '../lib/api';

@@ -1,6 +1,5 @@
 // "Terapkan ke Pengetahuan": koreksi dari tombol Salah ikut mengubah tab Pengetahuan, bukan hanya Log.
 // Baris yang ditimpa = baris Pengetahuan pertama yang dipakai giliran itu; tanpa baris, formulir baris baru.
-// Sebelum menulis: jawaban lama vs baru dan konfirmasi.
 import { useState } from 'react';
 import { BookOpen, CheckCircle } from '@phosphor-icons/react';
 import { api } from '../lib/api';

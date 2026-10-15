@@ -1,4 +1,4 @@
-// Pengaturan: Konfigurasi non-rahasia + Pengetahuan (98 baris, cari, sunting → pengetahuan_tulis).
+// Pengaturan: Konfigurasi non-rahasia + Pengetahuan (cari, sunting → pengetahuan_tulis).
 import { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MagnifyingGlass, Plus } from '@phosphor-icons/react';

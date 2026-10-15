@@ -1,4 +1,4 @@
-// Gambar latih (U1.10): terima jpeg/png/webp <= 5 MB, kompres di browser ke lebar maks 1280 px (JPEG).
+// Gambar latih: terima jpeg/png/webp <= 5 MB, kompres di browser ke lebar maks 1280 px (JPEG).
 export const MIME_DITERIMA = ['image/jpeg', 'image/png', 'image/webp'];
 export const MAKS_BYTE = 5 * 1024 * 1024;
 const LEBAR_MAKS = 1280;

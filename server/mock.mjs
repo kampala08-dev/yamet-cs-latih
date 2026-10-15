@@ -51,7 +51,7 @@ function pipeline(lead, hari, sumber, t0) {
     const isi = dalam.filter((l) => kolomTahap(l.status) === status);
     return {
       status, jumlah: isi.length, kumulatif: sampai(i), umur_median_jam: median(isi.map(diTahap)),
-      // U1.6: konversi_pct = dari tahap sebelumnya; arti lama (ke tahap berikut) = konversi_ke_berikut_pct.
+      // konversi_pct = dari tahap sebelumnya; arti lama (ke tahap berikut) = konversi_ke_berikut_pct.
       konversi_pct: i > 0 && sampai(i - 1) ? Math.round((sampai(i) / sampai(i - 1)) * 1000) / 10 : null,
       konversi_ke_berikut_pct: i < TAHAP.length - 1 && sampai(i) ? Math.round((sampai(i + 1) / sampai(i)) * 1000) / 10 : null,
       teratas: isi.slice(0, 3).map((l) => ({ ...l, umur_jam: umur(l) })),
@@ -148,7 +148,7 @@ export function buatMock(sekarang = () => Date.now()) {
     },
     eskalasi_daftar: ({ nomor_hash }) => eskalasi.filter((e) => !nomor_hash || e.nomor_hash === nomor_hash).map(({ '3_pesan_terakhir': p3, ...e }) => ({ ...e, pesan_terakhir: p3, nomor: samarkan(e.nomor) })),
     jam_ganti_daftar: ({ anak, nomor_hash }) => riwayatJamGanti.filter((j) => (!anak || j.anak.toLowerCase() === anak.toLowerCase()) && (!nomor_hash || j.nomor_hash === nomor_hash)),
-    // U1.6: tanpa nomor_hash (usulan U1.7 belum diambil); umpan_balik baru ada di U1.8.
+    // Tanpa nomor_hash (usulan U1.7 belum diambil); umpan_balik baru ada di U1.8.
     klien_aktif_baca: (_, admin) => klien.map(({ nomor_hash: _h, ...k }, i) => ({ ...k, baris: i + 2, nomor_ortu: admin ? k.nomor_ortu : samarkan(k.nomor_ortu) })),
     label: ({ id_giliran, label: l, koreksi }) => {
       label.set(id_giliran, { l, koreksi });
@@ -173,7 +173,7 @@ export function buatMock(sekarang = () => Date.now()) {
       const nomorPercakapan = percakapan.find((p) => p.nomor_hash === (e?.nomor_hash || nomor_hash))?.nomor;
       return { id, nomor_hash, status, admin, kanal: 'wa', nomor: e?.nomor || nomorPercakapan || '' };
     },
-    // U1.15: kredensial WA belum ada di Fase 1, jadi balasan admin tercatat tapi tertunda.
+    // Kredensial WA belum ada di Fase 1, jadi balasan admin tercatat tapi tertunda.
     balas_admin: ({ nomor_hash, teks, admin }) => {
       const baris = { waktu: waktu(sekarang()), arah: 'keluar', pesan: teks, tool_dipanggil: `admin:${admin}`, id_giliran: '', status: 'tertunda: kredensial WA' };
       balasanAdmin.set(nomor_hash, [...(balasanAdmin.get(nomor_hash) || []), baris]);

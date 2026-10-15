@@ -1,4 +1,3 @@
-// Grafik garis biru tanpa gradien, SVG sendiri. Titik tertinggi diberi label.
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { angka } from '../lib/format';

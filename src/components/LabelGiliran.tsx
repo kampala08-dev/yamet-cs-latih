@@ -1,4 +1,4 @@
-// Tombol Benar/Salah per balasan bot + kolom koreksi di tempat. Menulis Log.label & Log.koreksi lewat aksi label.
+// Menulis Log.label dan Log.koreksi lewat aksi label.
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check, CheckCircle, X } from '@phosphor-icons/react';

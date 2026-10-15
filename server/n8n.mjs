@@ -70,7 +70,7 @@ export function buatKlienN8n({ n8nBase, rahasia, batasWaktuMs }, ambil = fetch) 
     let json = null;
     try { json = mentah ? JSON.parse(mentah) : null; } catch { json = null; }
     if (!res.ok) {
-      // Galat bisnis dari workflow 11 (U1.6: 400 masukan, 404 id tidak ada, 409 nomor ganda) diteruskan apa adanya.
+      // Galat bisnis dari workflow 11 (400 masukan, 404 id tidak ada, 409 nomor ganda) diteruskan apa adanya.
       if ([400, 404, 409].includes(res.status) && json && typeof json.galat === 'string') {
         return { ok: false, kode: res.status, galat: json.galat.slice(0, 300) };
       }

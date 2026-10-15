@@ -65,7 +65,6 @@ export function App() {
     return () => window.removeEventListener(PERISTIWA_SESI_HABIS, habis);
   }, []);
 
-  // Arahkan rute sesuai status masuk.
   useEffect(() => {
     if (keadaan.jenis === 'tamu' && jalur !== '/masuk') pindah('/masuk', true);
     if (keadaan.jenis === 'masuk' && !HALAMAN[jalur] && !jalur.startsWith('/klien/')) pindah('/ikhtisar', true);

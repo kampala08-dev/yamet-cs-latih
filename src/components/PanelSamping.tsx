@@ -14,7 +14,6 @@ interface PanelSampingProps {
 }
 
 export function PanelSamping({ terbuka, onTutup, judul, children }: PanelSampingProps) {
-  // Hanya satu bentuk yang hidup: kartu samping di layar lebar, lembar geser di bawahnya.
   const lebar = useLayar('(min-width: 1024px)');
   useEffect(() => {
     if (!terbuka || !lebar) return undefined;

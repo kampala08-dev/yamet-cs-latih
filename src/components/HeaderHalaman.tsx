@@ -34,7 +34,7 @@ export function PemilihRentang({ nilai, onUbah }: { nilai: Rentang; onUbah: (r: 
   );
 }
 
-// Halaman CRM: lebar maksimum 1400px, ruang bawah untuk tab bar HP.
+// Ruang bawah untuk tab bar HP.
 export function IsiHalaman({ children }: { children: ReactNode }) {
   return <main className="mx-auto max-w-[1400px] px-4 pb-28 pt-6 lg:px-8 lg:pb-12 lg:pt-8">{children}</main>;
 }

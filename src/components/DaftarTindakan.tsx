@@ -1,4 +1,3 @@
-// Perlu tindakan: eskalasi terbuka (Ambil alih/Selesai), follow-up jatuh tempo, jam ganti diajukan (Setujui/Tolak).
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { api } from '../lib/api';
@@ -30,7 +29,6 @@ function TombolAksi({ pilihan, onSelesai }: TombolAksiProps) {
   const [galat, setGalat] = useState('');
   if (sesi.peran !== 'admin') return null;
   async function jalan(p: TombolAksiProps['pilihan'][number]) {
-    // Tab WA dibuka sinkron saat klik (Ambil alih) supaya tidak diblokir; diarahkan setelah aksi sukses.
     const tab = siapkanTabWa(Boolean(p.wa) && bolehBukaWa(sesi.peran, p.wa?.nomor, p.wa?.kanal));
     setProses(p.label);
     setGalat('');
@@ -66,7 +64,6 @@ export function DaftarTindakan({ data, ganti, ringkas = false }: { data: PerluTi
   if (total === 0) return <Kosong judul="Tidak ada yang perlu ditindak." isi="Eskalasi, follow-up, dan pengajuan jam ganti yang menunggu muncul di sini." />;
 
   function selesai(aksi: string, isi: Record<string, string>) {
-    // Setelah Ambil alih: buka transkrip percakapan itu (balas sebagai admin ada di sana).
     if (aksi === 'eskalasi_status' && isi.status === 'Diambil') {
       const e = data.eskalasi_terbuka.find((x) => idEskalasi(x) === isi.id);
       if (e?.nomor_hash) setTranskrip({ nomor_hash: e.nomor_hash, nomor_samar: samarkanNomor(e.nomor), nama: '', pesan_terakhir: e.alasan, waktu: e.waktu, status: 'Admin', id_eskalasi: idEskalasi(e), kanal: e.kanal, nomor: e.nomor });

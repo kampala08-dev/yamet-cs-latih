@@ -1,4 +1,3 @@
-// Baris 3 (7/5): Pipeline lead dan Grafik percakapan.
 import { useCallback, useState } from 'react';
 import { angka, labelGrafik } from '../../lib/format';
 import { useAksi } from '../../lib/useAksi';

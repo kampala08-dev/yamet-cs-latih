@@ -1,4 +1,3 @@
-// Uji server: node --test server/
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { buatApp } from './index.mjs';

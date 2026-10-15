@@ -69,7 +69,7 @@ export function buatApp(konfig, { klien, sekarang = () => Date.now() } = {}) {
     if (req.method === 'POST' && !req.is('application/json')) return balasGalat(res, 415, 'Content-Type harus application/json');
     next();
   });
-  // /api/chat boleh membawa gambar (base64, U1.10): batas 8 MB; rute lain tetap 16 kB.
+  // /api/chat boleh membawa gambar (base64): batas 8 MB; rute lain tetap 16 kB.
   app.use('/api/chat', express.json({ limit: '8mb' }));
   app.use('/api', express.json({ limit: '16kb' }));
 

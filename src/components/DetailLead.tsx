@@ -1,4 +1,3 @@
-// Detail lead + ubah tahap (lead_status) + WhatsApp (admin) + salin ke Klien Aktif saat jadi klien.
 import { useState } from 'react';
 import { WhatsappLogo } from '@phosphor-icons/react';
 import { api } from '../lib/api';
@@ -20,7 +19,7 @@ function Isi({ lead, onBerubah }: { lead: LeadV2; onBerubah?: (id: string, statu
   const [alasan, setAlasan] = useState<string>(ALASAN_HILANG[0]);
 
   function pilihTahap(baru: string) {
-    // U1.6: Hilang wajib membawa alasan dari daftar baku.
+    // Hilang wajib membawa alasan dari daftar baku.
     if (baru === 'Hilang') return setPilihHilang(true);
     setPilihHilang(false);
     void ubahTahap(baru);

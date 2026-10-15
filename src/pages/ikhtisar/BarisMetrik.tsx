@@ -1,4 +1,3 @@
-// Baris 1: empat ubin metrik dengan angka mono yang berhitung naik dan delta vs periode sebelumnya.
 import { CalendarCheck, ChatsCircle, TrendDown, TrendUp, UserPlus, WarningCircle, type Icon } from '@phosphor-icons/react';
 import { angka } from '../../lib/format';
 import type { RingkasanV2 } from '../../lib/tipe';

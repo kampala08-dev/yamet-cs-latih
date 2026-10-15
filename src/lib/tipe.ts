@@ -136,7 +136,7 @@ export interface Skenario {
   bisaDiketik: boolean;
 }
 
-// --- CRM v2 (desain-crm-v2.md). Bentuk = usulan U1.7, lihat uji/U1.7-laporan.md. ---
+// CRM v2 (desain-crm-v2.md): bentuk usulan, lihat uji/U1.7-laporan.md.
 
 export type Rentang = 'hari' | '7' | '30';
 
@@ -162,7 +162,7 @@ export interface TahapPipeline {
   jumlah: number;
   kumulatif?: number;
   umur_median_jam?: number | null;
-  // U1.6: konversi_pct = dari tahap sebelumnya; konversi_ke_berikut_pct = ke tahap berikut.
+  // konversi_pct = dari tahap sebelumnya; konversi_ke_berikut_pct = ke tahap berikut.
   konversi_ke_berikut_pct?: number | null;
   konversi_pct: number | null;
   teratas: LeadV2[];

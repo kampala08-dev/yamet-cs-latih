@@ -33,7 +33,7 @@ export function hitungSinyal({ klien, log, jamGanti, eskalasi, umpanBalik, berla
 
   const aktifJamGanti = jamGanti.filter((j) => !['Selesai', 'Ditolak'].includes(j.status));
   const sisaHari = (j: BarisJamGanti) => berlakuJamGantiHari - hariLalu(j.waktu, sekarang);
-  // U1.6 mengirim `hangus`; hitung sendiri hanya bila bidang itu tidak ada.
+  // Pakai `hangus` dari server; hitung sendiri hanya bila bidang itu tidak ada.
   const hangus = aktifJamGanti.filter((j) => (typeof j.hangus === 'boolean' ? j.hangus : sisaHari(j) < 0)).length;
   const hampir = aktifJamGanti.filter((j) => j.hangus !== true && sisaHari(j) >= 0 && sisaHari(j) <= 14).length;
 

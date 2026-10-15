@@ -1,4 +1,3 @@
-// Kepala Ikhtisar: sapaan sesuai jam, pemilih rentang, Muat ulang, lonceng eskalasi, Aksi cepat.
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowClockwise, Bell, GearSix, GraduationCap, Lightning, UserPlus, UsersThree, type Icon } from '@phosphor-icons/react';

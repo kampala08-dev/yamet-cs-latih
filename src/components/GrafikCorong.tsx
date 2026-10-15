@@ -1,5 +1,4 @@
-// Corong lead (SVG sendiri): tingkat trapesium per tahap, lebar ~ jumlah lead yang PERNAH mencapai tahap itu.
-// Kanan: pil tahap (konversi dari tingkat sebelumnya + umur median di tahap), dihubungkan garis putus-putus.
+// Corong lead (SVG sendiri): tingkat trapesium per tahap, lebar ~ jumlah lead yang pernah mencapai tahap itu (kumulatif).
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PEGAS } from '../lib/gerak';
@@ -8,7 +7,7 @@ import type { DataPipeline, TahapPipeline } from '../lib/tipe';
 
 const TINGGI = 56;
 const LEBAR_MIN = 30; // % — agar nama tahap tetap terbaca pada tingkat kecil
-// Gradasi bertingkat tanpa gradient CSS: zinc → biru muda → biru tua, tingkat terakhir hijau.
+// Bertingkat tanpa gradient CSS; tingkat terakhir hijau.
 const WARNA = [
   { isi: 'var(--color-zinc-200)', teks: 'text-zinc-900' },
   { isi: 'var(--color-biru-100)', teks: 'text-zinc-900' },
@@ -45,7 +44,7 @@ export function susunTingkat(tahap: TahapPipeline[], sekarang = Date.now()): Tin
     return {
       status: t.status,
       kumulatif: kum[i],
-      // U1.6: konversi_pct = dari tahap sebelumnya. Bila belum dikirim, dihitung dari kumulatif.
+      // konversi_pct = dari tahap sebelumnya; bila belum dikirim, dihitung dari kumulatif.
       konversi: typeof t.konversi_pct === 'number' ? t.konversi_pct : i === 0 || !kum[i - 1] ? null : (kum[i] / kum[i - 1]) * 100,
       pertama: i === 0,
       medianJam: typeof t.umur_median_jam === 'number' ? t.umur_median_jam : median(dariLead),
@@ -92,7 +91,6 @@ export function GrafikCorong({ data }: { data: DataPipeline }) {
                   <span className="truncate font-medium">{t.status}</span>
                   <span className="font-mono">{angka(t.kumulatif)}</span>
                 </span>
-                {/* Garis putus-putus dari tepi kanan tingkat ke pil (hanya wadah lebar). */}
                 <span className="absolute top-1/2 hidden border-t border-dashed border-zinc-300 @xl:block" style={{ left: `${tepiKanan}%`, right: 0 }} aria-hidden="true" />
               </div>
               <div>

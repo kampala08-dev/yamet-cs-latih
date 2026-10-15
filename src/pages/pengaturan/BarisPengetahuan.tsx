@@ -1,4 +1,4 @@
-// Satu baris tabel Pengetahuan + saklar "Jawab persis" (aksi pengetahuan_verbatim, U1.13).
+// Satu baris tabel Pengetahuan + saklar "Jawab persis" (aksi pengetahuan_verbatim).
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { api } from '../../lib/api';

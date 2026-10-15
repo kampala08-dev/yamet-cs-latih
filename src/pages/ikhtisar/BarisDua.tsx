@@ -1,4 +1,3 @@
-// Baris 2 (5/4/3): Jadwal hari ini, Kotak masuk percakapan, Perlu tindakan.
 import { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ANAK_DAFTAR, INDUK_DAFTAR } from '../../lib/gerak';

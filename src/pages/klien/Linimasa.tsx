@@ -1,4 +1,3 @@
-// Linimasa gabungan satu anak, urut waktu terbaru di atas.
 import { motion } from 'framer-motion';
 import { ArrowsClockwise, CalendarX, ChatsCircle, Star, WarningCircle, type Icon } from '@phosphor-icons/react';
 import { ANAK_DAFTAR, INDUK_DAFTAR } from '../../lib/gerak';

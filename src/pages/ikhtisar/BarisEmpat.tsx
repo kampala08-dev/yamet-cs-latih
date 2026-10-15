@@ -1,4 +1,3 @@
-// Baris 4 (4/4/4): Layanan paling ditanya, Pertanyaan tidak terjawab, Alur otomatis.
 import { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BellRinging, CalendarCheck, ChatCircleDots, PaperPlaneTilt, Sparkle, UserPlus, type Icon } from '@phosphor-icons/react';

@@ -183,7 +183,6 @@ export function buatUmpanBalik(t0) {
   ].map(([nomor_hash, skor, komentar, hariLalu]) => ({ waktu: waktu(t0 - hariLalu * HARI), nomor_hash, skor, komentar }));
 }
 
-// Log klien: izin (topik izin) + percakapan biasa.
 export function logKlien(t0, nomor_hash, adaIzin) {
   const baris = [];
   const tambah = (hariLalu, arah, pesan, topik) => baris.push({ waktu: waktu(t0 - hariLalu * HARI), arah, pesan, topik, id_giliran: `g-${idAcak()}` });

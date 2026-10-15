@@ -40,7 +40,6 @@ function pilihan(v, daftar) {
 
 export const TAHAP_LEAD = ['Baru', 'Follow-up', 'Dihubungi', 'Observasi dijadwalkan', 'Observasi selesai', 'Asesmen', 'Klien aktif', 'Hilang'];
 const HASH = /^[a-f0-9]{64}$/;
-// Alasan Hilang baku (U1.6).
 export const ALASAN_HILANG = ['tidak merespons', 'biaya', 'jarak/jadwal', 'pilih tempat lain', 'belum siap', 'tidak sesuai layanan'];
 
 function hashOpsional(b) {
@@ -96,7 +95,7 @@ const ATURAN = {
       }
       const nomor = teks(b.nomor, 40, true);
       if (NOMOR_LATIH.test(nomor)) return { nomor };
-      // Nomor asli (kartu anak, U1.6: klien_aktif_baca belum membawa nomor_hash) hanya untuk admin.
+      // Nomor asli (kartu anak: klien_aktif_baca belum membawa nomor_hash) hanya untuk admin.
       if (sesi.peran === 'admin' && /^[0-9+\-\s]{8,20}$/.test(nomor)) return { nomor };
       throw new Error('log_sesi hanya untuk nomor latih-..., nomor_hash, atau nomor asli oleh admin');
     },
@@ -181,7 +180,7 @@ const ATURAN = {
       return { id, topik, pertanyaan_variasi: teks(b.pertanyaan_variasi, 1000), jawaban: teks(b.jawaban, 2000, true), ...verbatim };
     },
   },
-  // U1.15: admin membalas orang tua dari panel transkrip (nama admin diisi server dari sesi).
+  // Nama admin diisi server dari sesi.
   balas_admin: {
     tulis: true,
     susun: (b) => {
@@ -190,7 +189,6 @@ const ATURAN = {
       return { nomor_hash, teks: teks(b.teks, 1000, true) };
     },
   },
-  // U1.13: tanda "jawab persis" per baris Pengetahuan.
   pengetahuan_verbatim: {
     tulis: true,
     susun: (b) => {

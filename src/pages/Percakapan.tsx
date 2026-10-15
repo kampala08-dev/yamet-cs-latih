@@ -1,4 +1,3 @@
-// Percakapan: daftar penuh + transkrip (label Benar/Salah + koreksi) + audit mingguan.
 import { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { HARI_RENTANG } from '../lib/format';

@@ -1,6 +1,4 @@
-// Buka WhatsApp setelah "Ambil alih" berhasil (U1.15).
-// Tab kosong dibuka SAAT klik (sinkron) agar tidak diblokir pemblokir popup, lalu diarahkan setelah aksi sukses;
-// ditutup bila aksi gagal atau nomor ternyata tidak utuh.
+// Tab dibuka sinkron saat klik agar tidak diblokir popup; ditutup bila aksi gagal atau nomor tidak utuh.
 import { nomorUtuh, tautanWa } from './format';
 
 export function bolehBukaWa(peran: string, nomor: string | undefined, kanal: string | undefined) {

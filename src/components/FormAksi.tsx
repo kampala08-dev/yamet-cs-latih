@@ -1,4 +1,3 @@
-// Formulir umum yang mengirim satu aksi tulis. Label di atas, galat di bawah kolom.
 import { useState, type FormEvent } from 'react';
 import { CheckCircle, FloppyDisk } from '@phosphor-icons/react';
 import { api } from '../lib/api';

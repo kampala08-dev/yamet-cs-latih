@@ -1,6 +1,6 @@
 // Status Lead disamakan dengan workflow (desain-crm-v2.md). Nilai lama dipetakan.
 export const TAHAP_PIPELINE = ['Baru', 'Dihubungi', 'Observasi dijadwalkan', 'Observasi selesai', 'Asesmen', 'Klien aktif'] as const;
-// Alasan Hilang baku (U1.6), wajib saat status Hilang.
+// Alasan Hilang baku, wajib saat status Hilang.
 export const ALASAN_HILANG = ['tidak merespons', 'biaya', 'jarak/jadwal', 'pilih tempat lain', 'belum siap', 'tidak sesuai layanan'] as const;
 
 export const SEMUA_STATUS = ['Baru', 'Follow-up', 'Dihubungi', 'Observasi dijadwalkan', 'Observasi selesai', 'Asesmen', 'Klien aktif', 'Hilang'] as const;

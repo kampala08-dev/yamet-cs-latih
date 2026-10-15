@@ -1,4 +1,4 @@
-// Satu sumber parameter gerak: pegas stiffness 100 / damping 20, daftar berurutan 0,04 dtk, ubin 0,05 dtk.
+// Satu sumber parameter gerak.
 export const PEGAS = { type: 'spring', stiffness: 100, damping: 20 } as const;
 
 export const INDUK_DAFTAR = {

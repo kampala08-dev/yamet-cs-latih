@@ -1,4 +1,3 @@
-// Jadwal 7 hari ke depan: observasi/asesmen + status pengingat.
 import { motion } from 'framer-motion';
 import { INDUK_DAFTAR, INDUK_UBIN } from '../lib/gerak';
 import { useAksi } from '../lib/useAksi';

@@ -1,6 +1,5 @@
 import { useSyncExternalStore } from 'react';
 
-// true bila media query cocok; ikut berubah saat jendela diubah ukurannya.
 export function useLayar(query: string) {
   return useSyncExternalStore(
     (f) => {

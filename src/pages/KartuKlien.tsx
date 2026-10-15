@@ -1,4 +1,3 @@
-// Kartu anak (/klien/:nama): data Klien Aktif, sinyal risiko, linimasa gabungan, WA dan Ambil alih.
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, HandGrabbing, WhatsappLogo } from '@phosphor-icons/react';
@@ -29,7 +28,6 @@ function AksiKlien({ k, idTerbuka }: { k: BarisKlien; idTerbuka?: string }) {
   const [transkrip, setTranskrip] = useState(false);
   if (sesi.peran !== 'admin') return null;
   async function ambil() {
-    // Klien Aktif = orang tua di WhatsApp; tab WA dibuka sinkron saat klik lalu diarahkan setelah sukses.
     const tab = siapkanTabWa(bolehBukaWa(sesi.peran, k.nomor_ortu, 'wa'));
     setStatus('proses');
     setGalat('');
@@ -74,7 +72,7 @@ function IsiKartu({ k }: { k: BarisKlien }) {
   const { sesi } = useSesi();
   const jamGanti = useAksi<BarisJamGanti[]>('jam_ganti_daftar', { anak: k.nama_anak });
   const daftar = <T,>(d: T[] | null) => (Array.isArray(d) ? d : []);
-  // U1.6: klien_aktif_baca belum membawa nomor_hash. Ambil dari baris Jam Ganti anak ini bila ada;
+  // klien_aktif_baca belum membawa nomor_hash. Ambil dari baris Jam Ganti anak ini bila ada;
   // admin tetap bisa membaca Log lewat nomor asli (server menormalkan ke 62 lalu meng-hash).
   const hash = k.nomor_hash || daftar(jamGanti.data).find((j) => j.nomor_hash)?.nomor_hash || '';
   const pakaiNomor = !hash && sesi.peran === 'admin' && nomorUtuh(k.nomor_ortu);
